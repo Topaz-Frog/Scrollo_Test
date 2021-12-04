@@ -1,0 +1,604 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AAFD07DD275BED60007C7C8B /* ScrolloApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFD07DC275BED60007C7C8B /* ScrolloApp.swift */; };
+		AAFD07DF275BED60007C7C8B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFD07DE275BED60007C7C8B /* ContentView.swift */; };
+		AAFD07E1275BED61007C7C8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAFD07E0275BED61007C7C8B /* Assets.xcassets */; };
+		AAFD07E4275BED61007C7C8B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAFD07E3275BED61007C7C8B /* Preview Assets.xcassets */; };
+		AAFD07EE275BED61007C7C8B /* ScrolloTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFD07ED275BED61007C7C8B /* ScrolloTests.swift */; };
+		AAFD07F8275BED61007C7C8B /* ScrolloUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFD07F7275BED61007C7C8B /* ScrolloUITests.swift */; };
+		AAFD07FA275BED61007C7C8B /* ScrolloUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFD07F9275BED61007C7C8B /* ScrolloUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AAFD07EA275BED61007C7C8B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AAFD07D1275BED60007C7C8B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AAFD07D8275BED60007C7C8B;
+			remoteInfo = Scrollo;
+		};
+		AAFD07F4275BED61007C7C8B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AAFD07D1275BED60007C7C8B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AAFD07D8275BED60007C7C8B;
+			remoteInfo = Scrollo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AAFD07D9275BED60007C7C8B /* Scrollo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scrollo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AAFD07DC275BED60007C7C8B /* ScrolloApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrolloApp.swift; sourceTree = "<group>"; };
+		AAFD07DE275BED60007C7C8B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		AAFD07E0275BED61007C7C8B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AAFD07E3275BED61007C7C8B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AAFD07E9275BED61007C7C8B /* ScrolloTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScrolloTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AAFD07ED275BED61007C7C8B /* ScrolloTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrolloTests.swift; sourceTree = "<group>"; };
+		AAFD07F3275BED61007C7C8B /* ScrolloUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScrolloUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AAFD07F7275BED61007C7C8B /* ScrolloUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrolloUITests.swift; sourceTree = "<group>"; };
+		AAFD07F9275BED61007C7C8B /* ScrolloUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrolloUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AAFD07D6275BED60007C7C8B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AAFD07E6275BED61007C7C8B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AAFD07F0275BED61007C7C8B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AAFD07D0275BED60007C7C8B = {
+			isa = PBXGroup;
+			children = (
+				AAFD07DB275BED60007C7C8B /* Scrollo */,
+				AAFD07EC275BED61007C7C8B /* ScrolloTests */,
+				AAFD07F6275BED61007C7C8B /* ScrolloUITests */,
+				AAFD07DA275BED60007C7C8B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AAFD07DA275BED60007C7C8B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AAFD07D9275BED60007C7C8B /* Scrollo.app */,
+				AAFD07E9275BED61007C7C8B /* ScrolloTests.xctest */,
+				AAFD07F3275BED61007C7C8B /* ScrolloUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AAFD07DB275BED60007C7C8B /* Scrollo */ = {
+			isa = PBXGroup;
+			children = (
+				AAFD07DC275BED60007C7C8B /* ScrolloApp.swift */,
+				AAFD07DE275BED60007C7C8B /* ContentView.swift */,
+				AAFD07E0275BED61007C7C8B /* Assets.xcassets */,
+				AAFD07E2275BED61007C7C8B /* Preview Content */,
+			);
+			path = Scrollo;
+			sourceTree = "<group>";
+		};
+		AAFD07E2275BED61007C7C8B /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				AAFD07E3275BED61007C7C8B /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		AAFD07EC275BED61007C7C8B /* ScrolloTests */ = {
+			isa = PBXGroup;
+			children = (
+				AAFD07ED275BED61007C7C8B /* ScrolloTests.swift */,
+			);
+			path = ScrolloTests;
+			sourceTree = "<group>";
+		};
+		AAFD07F6275BED61007C7C8B /* ScrolloUITests */ = {
+			isa = PBXGroup;
+			children = (
+				AAFD07F7275BED61007C7C8B /* ScrolloUITests.swift */,
+				AAFD07F9275BED61007C7C8B /* ScrolloUITestsLaunchTests.swift */,
+			);
+			path = ScrolloUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AAFD07D8275BED60007C7C8B /* Scrollo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AAFD07FD275BED61007C7C8B /* Build configuration list for PBXNativeTarget "Scrollo" */;
+			buildPhases = (
+				AAFD07D5275BED60007C7C8B /* Sources */,
+				AAFD07D6275BED60007C7C8B /* Frameworks */,
+				AAFD07D7275BED60007C7C8B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Scrollo;
+			productName = Scrollo;
+			productReference = AAFD07D9275BED60007C7C8B /* Scrollo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AAFD07E8275BED61007C7C8B /* ScrolloTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AAFD0800275BED61007C7C8B /* Build configuration list for PBXNativeTarget "ScrolloTests" */;
+			buildPhases = (
+				AAFD07E5275BED61007C7C8B /* Sources */,
+				AAFD07E6275BED61007C7C8B /* Frameworks */,
+				AAFD07E7275BED61007C7C8B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AAFD07EB275BED61007C7C8B /* PBXTargetDependency */,
+			);
+			name = ScrolloTests;
+			productName = ScrolloTests;
+			productReference = AAFD07E9275BED61007C7C8B /* ScrolloTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		AAFD07F2275BED61007C7C8B /* ScrolloUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AAFD0803275BED61007C7C8B /* Build configuration list for PBXNativeTarget "ScrolloUITests" */;
+			buildPhases = (
+				AAFD07EF275BED61007C7C8B /* Sources */,
+				AAFD07F0275BED61007C7C8B /* Frameworks */,
+				AAFD07F1275BED61007C7C8B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AAFD07F5275BED61007C7C8B /* PBXTargetDependency */,
+			);
+			name = ScrolloUITests;
+			productName = ScrolloUITests;
+			productReference = AAFD07F3275BED61007C7C8B /* ScrolloUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AAFD07D1275BED60007C7C8B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1310;
+				LastUpgradeCheck = 1310;
+				TargetAttributes = {
+					AAFD07D8275BED60007C7C8B = {
+						CreatedOnToolsVersion = 13.1;
+					};
+					AAFD07E8275BED61007C7C8B = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = AAFD07D8275BED60007C7C8B;
+					};
+					AAFD07F2275BED61007C7C8B = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = AAFD07D8275BED60007C7C8B;
+					};
+				};
+			};
+			buildConfigurationList = AAFD07D4275BED60007C7C8B /* Build configuration list for PBXProject "Scrollo" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AAFD07D0275BED60007C7C8B;
+			productRefGroup = AAFD07DA275BED60007C7C8B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AAFD07D8275BED60007C7C8B /* Scrollo */,
+				AAFD07E8275BED61007C7C8B /* ScrolloTests */,
+				AAFD07F2275BED61007C7C8B /* ScrolloUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AAFD07D7275BED60007C7C8B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AAFD07E4275BED61007C7C8B /* Preview Assets.xcassets in Resources */,
+				AAFD07E1275BED61007C7C8B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AAFD07E7275BED61007C7C8B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AAFD07F1275BED61007C7C8B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AAFD07D5275BED60007C7C8B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AAFD07DF275BED60007C7C8B /* ContentView.swift in Sources */,
+				AAFD07DD275BED60007C7C8B /* ScrolloApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AAFD07E5275BED61007C7C8B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AAFD07EE275BED61007C7C8B /* ScrolloTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AAFD07EF275BED61007C7C8B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AAFD07F8275BED61007C7C8B /* ScrolloUITests.swift in Sources */,
+				AAFD07FA275BED61007C7C8B /* ScrolloUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AAFD07EB275BED61007C7C8B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AAFD07D8275BED60007C7C8B /* Scrollo */;
+			targetProxy = AAFD07EA275BED61007C7C8B /* PBXContainerItemProxy */;
+		};
+		AAFD07F5275BED61007C7C8B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AAFD07D8275BED60007C7C8B /* Scrollo */;
+			targetProxy = AAFD07F4275BED61007C7C8B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		AAFD07FB275BED61007C7C8B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AAFD07FC275BED61007C7C8B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AAFD07FE275BED61007C7C8B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Scrollo/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ErwinFruit.Scrollo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AAFD07FF275BED61007C7C8B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Scrollo/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ErwinFruit.Scrollo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		AAFD0801275BED61007C7C8B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ErwinFruit.ScrolloTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Scrollo.app/Scrollo";
+			};
+			name = Debug;
+		};
+		AAFD0802275BED61007C7C8B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ErwinFruit.ScrolloTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Scrollo.app/Scrollo";
+			};
+			name = Release;
+		};
+		AAFD0804275BED61007C7C8B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ErwinFruit.ScrolloUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Scrollo;
+			};
+			name = Debug;
+		};
+		AAFD0805275BED61007C7C8B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ErwinFruit.ScrolloUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Scrollo;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AAFD07D4275BED60007C7C8B /* Build configuration list for PBXProject "Scrollo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AAFD07FB275BED61007C7C8B /* Debug */,
+				AAFD07FC275BED61007C7C8B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AAFD07FD275BED61007C7C8B /* Build configuration list for PBXNativeTarget "Scrollo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AAFD07FE275BED61007C7C8B /* Debug */,
+				AAFD07FF275BED61007C7C8B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AAFD0800275BED61007C7C8B /* Build configuration list for PBXNativeTarget "ScrolloTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AAFD0801275BED61007C7C8B /* Debug */,
+				AAFD0802275BED61007C7C8B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AAFD0803275BED61007C7C8B /* Build configuration list for PBXNativeTarget "ScrolloUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AAFD0804275BED61007C7C8B /* Debug */,
+				AAFD0805275BED61007C7C8B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AAFD07D1275BED60007C7C8B /* Project object */;
+}
