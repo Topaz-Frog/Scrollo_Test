@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct ScrolloApp: App {
+    @StateObject var genManager = GeneratorsManager()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(genManager)
         }
     }
 }
