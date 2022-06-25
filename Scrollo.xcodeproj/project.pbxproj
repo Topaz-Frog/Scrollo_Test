@@ -192,6 +192,8 @@
 			dependencies = (
 			);
 			name = Scrollo;
+			packageProductDependencies = (
+			);
 			productName = Scrollo;
 			productReference = AAFD07D9275BED60007C7C8B /* Scrollo.app */;
 			productType = "com.apple.product-type.application";
@@ -264,6 +266,8 @@
 				Base,
 			);
 			mainGroup = AAFD07D0275BED60007C7C8B;
+			packageReferences = (
+			);
 			productRefGroup = AAFD07DA275BED60007C7C8B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -406,7 +410,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -461,7 +465,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

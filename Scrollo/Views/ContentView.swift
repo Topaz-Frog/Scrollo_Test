@@ -85,22 +85,22 @@ struct ContentView: View {
                         
                     Spacer()
                     
-                    NavigationLink {
-                        RoomView()
-                    } label: {
-                        VStack {
-                            Image(systemName: "link.circle")
-                                .imageScale(.large)
-                                .font(.system(size: 32, weight: .bold))
-                                
-                            Text("ROOM")
-                                .fontWeight(.medium)
-                                .font(Font.custom("Avenir", size: 18))
-                        }
-                        .foregroundColor(Color.init(red: 50/255, green: 71/255, blue: 75/255))
-                    }
-                        
-                    Spacer()
+//                    NavigationLink {
+//                        RoomView()
+//                    } label: {
+//                        VStack {
+//                            Image(systemName: "link.circle")
+//                                .imageScale(.large)
+//                                .font(.system(size: 32, weight: .bold))
+//
+//                            Text("ROOM")
+//                                .fontWeight(.medium)
+//                                .font(Font.custom("Avenir", size: 18))
+//                        }
+//                        .foregroundColor(Color.init(red: 50/255, green: 71/255, blue: 75/255))
+//                    }
+//
+//                    Spacer()
                 }
                 .background(Color.init(red: 217/255, green: 125/255, blue: 84/255))
                 .padding(.top, 5)

@@ -1,5 +1,7 @@
 import SwiftUI
 
+// Render png animation in blender with transparent background
+
 struct RollDicesView: View {
     @EnvironmentObject var genManager: GeneratorsManager
     @Environment(\.presentationMode) var presentationMode
@@ -34,9 +36,9 @@ struct RollDicesView: View {
             
             HStack(alignment: .top, spacing: 15) {
                 
-                Color(red: 217/255, green: 125/255, blue: 84/255)
-                    .frame(width: 50)
-                    .ignoresSafeArea()
+//                Color(red: 217/255, green: 125/255, blue: 84/255)
+//                    .frame(width: 50)
+//                    .ignoresSafeArea()
                 
                 HStack {
                     Spacer()
@@ -82,9 +84,9 @@ struct RollDicesView: View {
                                 .cornerRadius(20)
                                 .contentShape(Rectangle())
                         }
-                        .alert("Rolling!", isPresented: $showingAlert) {
-                            Button("Nice!", role: .cancel) { }
-                        }
+//                        .alert("Rolling!", isPresented: $showingAlert) {
+//                            Button("Nice!", role: .cancel) { }
+//                        }
                     }
                     .padding(.top, 20)
                     

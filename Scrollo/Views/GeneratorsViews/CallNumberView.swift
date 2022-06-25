@@ -1,12 +1,24 @@
 import SwiftUI
 
+struct Background<Content: View>: View {
+    private var content: Content
+
+    init(@ViewBuilder content: @escaping () -> Content) {
+        self.content = content()
+    }
+
+    var body: some View {
+        content
+    }
+}
+
 struct CallNumberView: View {
     @EnvironmentObject var genManager: GeneratorsManager
     @Environment(\.presentationMode) var presentationMode
     @Binding var generator: Generator
     @State private var showingAlert = false
     @State var isCalled: Bool = false
-    @State var value: Int = 0
+    @State var value: CGFloat = 0
     @State var textMin: String = "0"
     @State var min: UInt32? = 0
     @State var textMax: String = "10"
@@ -37,80 +49,84 @@ struct CallNumberView: View {
             
             HStack(alignment: .top, spacing: 15) {
                 
-                Color(red: 217/255, green: 125/255, blue: 84/255)
-                    .frame(width: 50)
-                    .ignoresSafeArea()
+//                Color(red: 217/255, green: 125/255, blue: 84/255)
+//                    .frame(width: 50)
+//                    .ignoresSafeArea()
                 
                 HStack {
                     Spacer()
                     
                     VStack(alignment: .center, spacing: 20) {
                         
-                        Text("Both numbers have to be integers [Minimum - Maximum)")
-                            .fontWeight(.black)
-                            .font(Font.custom("Avenir", size: 20))
-                            .foregroundColor(.white)
-                            .frame(alignment: .center)
+//                        Text("Both numbers have to be integers [Minimum - Maximum)")
+//                            .fontWeight(.black)
+//                            .font(Font.custom("Avenir", size: 20))
+//                            .foregroundColor(.white)
+//                            .frame(alignment: .center)
                         
-                        HStack {
-                            //MARK: Min field
-                            VStack(alignment: .center) {
-                                Text("Minimum")
-                                    .fontWeight(.black)
-                                    .font(Font.custom("Avenir", size: 20))
-                                    .frame(alignment: .center)
-                                    .foregroundColor(Color.init(red: 217/255, green: 125/255, blue: 84/255))
-                                TextField(textMin, text: $textMin)
-                                    .font(.system(.body, design: .rounded))
-                                    .foregroundColor(.white)
-                                    .textFieldStyle(PlainTextFieldStyle())
-                                    .frame(height: 20)
-                                    .padding(10)
-                                    .overlay(
-                                        RoundedRectangle(cornerRadius: 5)
-                                            .stroke(Color.init(red: 217/255, green: 125/255, blue: 84/255), lineWidth: 1)
-                                    )
-                                    .padding(.vertical, 10)
-
-                            }
+                        Background {
                             
-                            //MARK: Image field
-                            VStack(alignment: .center) {
-                                Text("Maximum")
-                                    .fontWeight(.black)
-                                    .font(Font.custom("Avenir", size: 20))
-                                    .frame(alignment: .center)
-                                    .foregroundColor(Color.init(red: 217/255, green: 125/255, blue: 84/255))
-                                TextField(textMax, text: $textMax)
-                                    .font(.system(.body, design: .rounded))
-                                    .foregroundColor(.white)
-                                    .textFieldStyle(PlainTextFieldStyle())
-                                    .frame(height: 20)
-                                    .padding(10)
-                                    .overlay(
-                                        RoundedRectangle(cornerRadius: 5)
-                                            .stroke(Color.init(red: 217/255, green: 125/255, blue: 84/255), lineWidth: 1)
-                                    )
-                                    .padding(.vertical, 10)
+                            Spacer()
+                            
+                            HStack {
+                                //MARK: Min field
+                                VStack(alignment: .center) {
+                                    Text("Minimum")
+                                        .fontWeight(.black)
+                                        .font(Font.custom("Avenir", size: 20))
+                                        .frame(alignment: .center)
+                                        .foregroundColor(Color.init(red: 217/255, green: 125/255, blue: 84/255))
+                                    TextField(textMin, text: $textMin)
+                                        .font(.system(.body, design: .rounded))
+                                        .foregroundColor(.white)
+                                        .keyboardType(.numberPad)
+                                        .textFieldStyle(PlainTextFieldStyle())
+                                        .frame(height: 20)
+                                        .padding(10)
+                                        .overlay(
+                                            RoundedRectangle(cornerRadius: 5)
+                                                .stroke(Color.init(red: 217/255, green: 125/255, blue: 84/255), lineWidth: 1)
+                                        )
+                                        .padding(.vertical, 10)
+
+                                }
+                                
+                                //MARK: Max field
+                                VStack(alignment: .center) {
+                                    Text("Maximum")
+                                        .fontWeight(.black)
+                                        .font(Font.custom("Avenir", size: 20))
+                                        .frame(alignment: .center)
+                                        .foregroundColor(Color.init(red: 217/255, green: 125/255, blue: 84/255))
+                                    TextField(textMax, text: $textMax)
+                                        .font(.system(.body, design: .rounded))
+                                        .foregroundColor(.white)
+                                        .keyboardType(.numberPad)
+                                        .textFieldStyle(PlainTextFieldStyle())
+                                        .frame(height: 20)
+                                        .padding(10)
+                                        .overlay(
+                                            RoundedRectangle(cornerRadius: 5)
+                                                .stroke(Color.init(red: 217/255, green: 125/255, blue: 84/255), lineWidth: 1)
+                                        )
+                                        .padding(.vertical, 10)
+                                }
                             }
+                        }.onTapGesture {
+                            self.endEditing()
                         }
                         
                         Spacer()
                         
-                        if isCalled {
-                            Text("\(value)")
-                                .fontWeight(.black)
-                                .font(Font.custom("Avenir", size: 40))
-                                .foregroundColor(.white)
-                                .frame(alignment: .center)
-                        }
-                        
-                        Spacer()
-                        
+                        //MARK: Button
                         Button {
-                            callNum()
-                            isCalled = true
-                            showingAlert = true
+                            withAnimation(Animation.easeOut(duration: 2)) {
+//                                print("before: ", value)
+                                callNum()
+//                                print("after: ", value)
+                                isCalled = true
+                                showingAlert = true
+                            }
                         } label: {
                             Text("I'm calling!")
                                 .fontWeight(.black)
@@ -121,9 +137,16 @@ struct CallNumberView: View {
                                 .cornerRadius(20)
                                 .contentShape(Rectangle())
                         }
-                        .alert("Got a number!", isPresented: $showingAlert) {
-                            Button("Nice!", role: .cancel) { }
-                        }
+                        
+                        Spacer()
+                        
+                        //MARK: Result
+                        Circle()
+                            .fill(Color.init(red: 217/255, green: 125/255, blue: 84/255))
+                            .frame(width: 200, height: 200)
+                            .modifier(AnimatingNumberOverlay(number: value))
+                        
+                        Spacer()
                     }
                     .padding(.top, 20)
                     
@@ -151,6 +174,10 @@ struct CallNumberView: View {
         }
     }
     
+    private func endEditing() {
+        UIApplication.shared.endEditing()
+    }
+    
     func callNum() {
         min = UInt32(textMin)
         max = UInt32(textMax)
@@ -160,7 +187,37 @@ struct CallNumberView: View {
             max = UInt32(textMin)
         }
         
-        value = Int(arc4random_uniform(max! - min!) + min!)
+        value = CGFloat(arc4random_uniform(max! - min!) + min!)
+    }
+}
+
+// MARK: Number Animated
+struct AnimatingNumberOverlay: AnimatableModifier {
+    var number: CGFloat
+    var animatableData: CGFloat {
+        get {
+            number
+        }
+        set {
+            number = newValue
+            
+        }
+    }
+    
+    func body(content: Content) -> some View {
+//        print("returned: ", number)
+        return content.overlay(Text("\(Int(number))")
+                                .fontWeight(.black)
+                                .font(Font.custom("Avenir", size: 40))
+                                .frame(alignment: .center)
+                                .foregroundColor(Color.init(red: 51/255, green: 72/255, blue: 86/255))
+        )
+    }
+}
+
+extension UIApplication {
+    func endEditing() {
+        sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
 }
 

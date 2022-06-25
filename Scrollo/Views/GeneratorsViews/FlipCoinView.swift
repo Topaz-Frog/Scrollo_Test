@@ -5,8 +5,9 @@ struct FlipCoinView: View {
     @Environment(\.presentationMode) var presentationMode
     @Binding var generator: Generator
     @State private var showingAlert = false
-    @State var isFlipped: Bool = false
-    @State var value: Int = 0
+    @State var isFlipping: Bool = false
+    @State var isHeads: Bool = false
+    @State var degreesToFlip: Int = 0
     
     var body: some View {
         VStack(spacing: 0) {
@@ -33,9 +34,9 @@ struct FlipCoinView: View {
             
             HStack(alignment: .top, spacing: 15) {
                 
-                Color(red: 217/255, green: 125/255, blue: 84/255)
-                    .frame(width: 50)
-                    .ignoresSafeArea()
+//                Color(red: 217/255, green: 125/255, blue: 84/255)
+//                    .frame(width: 50)
+//                    .ignoresSafeArea()
                 
                 HStack {
                     Spacer()
@@ -44,13 +45,18 @@ struct FlipCoinView: View {
                         
                         Spacer()
                         
-                        if (value == 1 && isFlipped) {
+                        Coin(isFlipping: $isFlipping, isHeads: $isHeads)
+                            .rotation3DEffect(Angle(degrees: Double(degreesToFlip)), axis: (x: CGFloat(0), y: CGFloat(10), z: CGFloat(0)))
+                        
+                        Spacer()
+                        
+                        if (isHeads) {
                             Text("It's heads!")
                                 .fontWeight(.black)
                                 .font(Font.custom("Avenir", size: 20))
                                 .foregroundColor(.white)
                                 .frame(alignment: .center)
-                        } else if isFlipped {
+                        } else {
                             Text("It's tails!")
                                 .fontWeight(.black)
                                 .font(Font.custom("Avenir", size: 20))
@@ -61,9 +67,9 @@ struct FlipCoinView: View {
                         Spacer()
                         
                         Button {
-                            flip()
-                            isFlipped = true
-                            showingAlert = true
+//                            flip()
+                            flipCoin()
+//                            showingAlert = true
                         } label: {
                             Text("Flip a coin!")
                                 .fontWeight(.black)
@@ -74,9 +80,9 @@ struct FlipCoinView: View {
                                 .cornerRadius(20)
                                 .contentShape(Rectangle())
                         }
-                        .alert("Succesful Flip!", isPresented: $showingAlert) {
-                            Button("Nice!", role: .cancel) { }
-                        }
+//                        .alert("Succesful Flip!", isPresented: $showingAlert) {
+//                            Button("Nice!", role: .cancel) { }
+//                        }
                     }
                     .padding(.top, 20)
                     
@@ -104,8 +110,62 @@ struct FlipCoinView: View {
         }
     }
     
-    func flip() {
-        value = Int.random(in: 0..<2)
+    func flipCoin() {
+        withAnimation {
+            let randomNumber = Int.random(in: 5...6)
+            if degreesToFlip > 1800000000 {
+                reset()
+            }
+            degreesToFlip = degreesToFlip + (randomNumber * 180)
+            headsOrTails()
+            isFlipping.toggle()
+        }
+    }
+    
+    func headsOrTails() {
+        let divisible = degreesToFlip / 180
+        (divisible % 2) == 0 ? (isHeads = false) : (isHeads = true)
+    }
+    
+    func reset() {
+        degreesToFlip = 0
+    }
+}
+
+struct CoinFront : View {
+
+    var body: some View {
+        ZStack {
+            Image("heads")
+                    .resizable()
+                    .scaledToFit()
+                    .clipShape(Circle())
+
+        }
+    }
+}
+
+struct CoinBack : View {
+
+    var body: some View {
+        ZStack {
+            Image("tails")
+                    .resizable()
+                    .scaledToFit()
+                    .clipShape(Circle())
+
+        }
+    }
+}
+
+struct Coin: View {
+    @Binding var isFlipping: Bool
+    @Binding var isHeads: Bool
+    var body: some View {
+        ZStack {
+            if (isHeads) { CoinFront() }
+            else { CoinBack() }
+        }
     }
 }
 
