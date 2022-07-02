@@ -13,7 +13,7 @@ struct Background<Content: View>: View {
 }
 
 struct CallNumberView: View {
-    @EnvironmentObject var genManager: GeneratorsManager
+    @EnvironmentObject var genManager: EventManager
     @Environment(\.presentationMode) var presentationMode
     @Binding var generator: Generator
     @State private var showingAlert = false
@@ -49,10 +49,6 @@ struct CallNumberView: View {
             
             HStack(alignment: .top, spacing: 15) {
                 
-//                Color(red: 217/255, green: 125/255, blue: 84/255)
-//                    .frame(width: 50)
-//                    .ignoresSafeArea()
-                
                 HStack {
                     Spacer()
                     
@@ -66,8 +62,6 @@ struct CallNumberView: View {
                         
                         Background {
                             
-                            Spacer()
-                            
                             HStack {
                                 //MARK: Min field
                                 VStack(alignment: .center) {
@@ -75,7 +69,7 @@ struct CallNumberView: View {
                                         .fontWeight(.black)
                                         .font(Font.custom("Avenir", size: 20))
                                         .frame(alignment: .center)
-                                        .foregroundColor(Color.init(red: 217/255, green: 125/255, blue: 84/255))
+                                        .foregroundColor(Constants.Colors.OrangeBackground)
                                     TextField(textMin, text: $textMin)
                                         .font(.system(.body, design: .rounded))
                                         .foregroundColor(.white)
@@ -97,7 +91,7 @@ struct CallNumberView: View {
                                         .fontWeight(.black)
                                         .font(Font.custom("Avenir", size: 20))
                                         .frame(alignment: .center)
-                                        .foregroundColor(Color.init(red: 217/255, green: 125/255, blue: 84/255))
+                                        .foregroundColor(Constants.Colors.OrangeBackground)
                                     TextField(textMax, text: $textMax)
                                         .font(.system(.body, design: .rounded))
                                         .foregroundColor(.white)
@@ -178,7 +172,7 @@ struct CallNumberView: View {
         UIApplication.shared.endEditing()
     }
     
-    func callNum() {
+    private func callNum() {
         min = UInt32(textMin)
         max = UInt32(textMax)
         

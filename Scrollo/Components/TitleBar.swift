@@ -18,7 +18,7 @@ struct TitleBar: View {
 //                .foregroundColor(Color.init(red: 50/255, green: 71/255, blue: 75/255))
 //                .padding(.horizontal)
         }
-        .background(Color.init(red: 217/255, green: 125/255, blue: 84/255))
+        .background(Constants.Colors.OrangeBackground)
         .padding(.bottom, 5)
     }
 }

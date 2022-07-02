@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct NavigationBar: View {
-    @EnvironmentObject var genManager: GeneratorsManager
+    @EnvironmentObject var genManager: EventManager
     
     var body: some View {
         HStack(alignment: .bottom)

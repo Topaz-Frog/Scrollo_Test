@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct GeneratorDetailsView: View {
-    @EnvironmentObject var genManager: GeneratorsManager
+    @EnvironmentObject var genManager: EventManager
     @Environment(\.presentationMode) var presentationMode
     @Binding var generator: Generator
     
@@ -25,46 +25,39 @@ struct GeneratorDetailsView: View {
                         .font(.system(size: 26, weight: .bold))
                 }
             }
-            .foregroundColor(Color.init(red: 50/255, green: 71/255, blue: 75/255))
+            .foregroundColor(Constants.Colors.DarkBlueText)
             
             HStack(alignment: .top, spacing: 15) {
+                Spacer()
                 
-                Color(red: 217/255, green: 125/255, blue: 84/255)
-                    .frame(width: 50)
-                    .ignoresSafeArea()
-                
-                HStack {
-                    Spacer()
+                VStack(alignment: .center, spacing: 20) {
                     
-                    VStack(alignment: .center, spacing: 20) {
-                        
-                        Text(generator.description)
-                            .fontWeight(.black)
-                            .font(Font.custom("Avenir", size: 20))
-                            .foregroundColor(.white)
-                            .frame(alignment: .center)
-                        
-                        Text(generator.content)
-                            .fontWeight(.black)
-                            .font(Font.custom("Avenir", size: 20))
-                            .foregroundColor(.white)
-                            .frame(alignment: .center)
-                        
-                        Spacer()
-                    }
-                    .padding(.top, 20)
+                    Text(generator.description)
+                        .fontWeight(.black)
+                        .font(Font.custom("Avenir", size: 20))
+                        .foregroundColor(.white)
+                        .frame(alignment: .center)
+                    
+                    Text(generator.content)
+                        .fontWeight(.black)
+                        .font(Font.custom("Avenir", size: 20))
+                        .foregroundColor(.white)
+                        .frame(alignment: .center)
                     
                     Spacer()
                 }
-                .frame(minWidth: 0,
-                       maxWidth: .infinity,
-                       minHeight: 0,
-                       maxHeight: .infinity,
-                       alignment: .topLeading)
-                .background(Color.init(red: 51/255, green: 72/255, blue: 86/255))
+                .padding(.top, 20)
+                
+                Spacer()
             }
+            .frame(minWidth: 0,
+                   maxWidth: .infinity,
+                   minHeight: 0,
+                   maxHeight: .infinity,
+                   alignment: .topLeading)
+            .background(Constants.Colors.DarkBlueBackground)
         }
-        .background(Color.init(red: 217/255, green: 125/255, blue: 84/255))
+        .background(Constants.Colors.OrangeBackground)
         .navigationBarBackButtonHidden(true)
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {

@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @EnvironmentObject var genManager: GeneratorsManager
+    @EnvironmentObject var genManager: EventManager
     
     var body: some View {
         NavigationView {

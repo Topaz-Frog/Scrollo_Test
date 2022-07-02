@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct FlipCoinView: View {
-    @EnvironmentObject var genManager: GeneratorsManager
+    @EnvironmentObject var genManager: EventManager
     @Environment(\.presentationMode) var presentationMode
     @Binding var generator: Generator
     @State private var showingAlert = false

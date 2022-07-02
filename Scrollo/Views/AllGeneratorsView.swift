@@ -1,29 +1,27 @@
 import SwiftUI
 
 struct AllGeneratorsView: View {
-    @EnvironmentObject var genManager: GeneratorsManager
+    @EnvironmentObject var genManager: EventManager
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
-        NavigationView {
-            VStack(spacing: 0) {
-                
-                //MARK: List Start
-                List {
-                    ForEach(genManager.allGenerators.indices, id: \.self) { i in
-                        
-                        //MARK: Row
-                        if !genManager.isAdded(generator: genManager.allGenerators[i]) {
-                            GeneratorAddRow(generator: $genManager.allGenerators[i])
-                                .environmentObject(genManager)
-                        }
+        VStack(spacing: 0) {
+            
+            //MARK: List Start
+            List {
+                ForEach(genManager.allGenerators.indices, id: \.self) { i in
+                    
+                    //MARK: Row
+                    if !genManager.isAdded(generator: genManager.allGenerators[i]) {
+                        GeneratorAddRow(generator: $genManager.allGenerators[i])
+                            .environmentObject(genManager)
                     }
-                    .listRowBackground(Color.init(red: 51/255, green: 72/255, blue: 86/255))
                 }
-                .listStyle(.plain)
+                .listRowBackground(Color.init(red: 51/255, green: 72/255, blue: 86/255))
             }
-            .background(Color.init(red: 51/255, green: 72/255, blue: 86/255))
+            .listStyle(.plain)
         }
+        .background(Color.init(red: 51/255, green: 72/255, blue: 86/255))
         .navigationBarBackButtonHidden(true)
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {

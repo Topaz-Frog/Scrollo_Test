@@ -38,7 +38,7 @@ struct GeneratorRow: View {
                 .padding(.top, 30)
                 .padding(.bottom, 30)
         }
-        .background(Color.init(red: 110/255, green: 140/255, blue: 160/255))
+        .background(Constants.Colors.LightBlueBackground)
         .frame(minWidth: 0, minHeight: 0)
         .cornerRadius(16)
         .padding(.top, 5)

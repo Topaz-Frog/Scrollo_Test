@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct GeneratorCreationView: View {
-    @EnvironmentObject var genManager: GeneratorsManager
+    @EnvironmentObject var genManager: EventManager
     @Environment(\.presentationMode) var presentationMode
     @State var imageName: String = "dice"
     @State var name: String = "Name"
