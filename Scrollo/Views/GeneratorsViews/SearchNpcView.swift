@@ -44,7 +44,17 @@ struct SearchNpcView: View {
             }
             .foregroundColor(Constants.Colors.DarkBlueText)
             
-            
+            Form {
+                VStack(alignment: .leading, spacing: 20) {
+                    Section(header: Text("Search by ID")) {
+                        HStack {
+                            
+                        }
+                    }
+                }
+            }
+            .background(Constants.Colors.DarkBlueBackground)
+            .foregroundColor(Color.white)
             
             Form {
                 HStack(alignment: .top, spacing: 15) {
@@ -245,7 +255,7 @@ struct SearchNpcView: View {
         print(all_classes[template])
         
         // Assign race
-        if basic_races.contains(all_races[selected_race]) || exotic_races.contains(all_races[selected_class]) {
+        if basic_races.contains(all_races[selected_race]) || exotic_races.contains(all_races[selected_race]) {
             race = selected_race
         } else if all_races[selected_race] == "Basic race" {
             let rng_race = basic_races.randomElement()
@@ -276,7 +286,9 @@ struct SearchNpcView: View {
             
             temp_stats.append(temp_list.reduce(0, +))
         }
-        temp_stats.sort()
+        temp_stats.sort {
+            $0 > $1
+        }
         
         for i in Constants.NPCsGenerator.Classes_Stats_Prio[template] {
             stats.append(temp_stats[i-1])
@@ -344,11 +356,13 @@ struct SearchNpcView: View {
         }
         
         // Get skilled
-        let skills_idxs = 1...18
+        let skills_idxs = 0..<Constants.NPCsGenerator.Skills.count
         let shuffled_idxs = skills_idxs.shuffled()
         for i in 0 ..< prof {
             skills.append(shuffled_idxs[i])
         }
+        
+        print(prof)
         
         // Time for magic
         if all_classes[template] == "Wizard" {
@@ -357,12 +371,14 @@ struct SearchNpcView: View {
                 level = 20
             }
             
-            let max_spell_lvl = Constants.Spells.Wizard_Spells_Per_Level[level].count - 1
+            let max_spell_lvl = Constants.Spells.Wizard_Spells_Per_Level[level - 1].count
+            print(max_spell_lvl)
             
-            for spell_lvl in 0...max_spell_lvl {
+            for spell_lvl in 0..<max_spell_lvl {
                 var shuffled_spells = Constants.Spells.All_spells_by_level[spell_lvl][0].shuffled()
                 var picked_spells = [Int]()
-                while picked_spells.count < Constants.Spells.Wizard_Spells_Per_Level[level][0] || shuffled_spells.count == 0 {
+                print(Constants.Spells.Wizard_Spells_Per_Level[level - 1][spell_lvl])
+                while picked_spells.count < Constants.Spells.Wizard_Spells_Per_Level[level - 1][spell_lvl] || shuffled_spells.count == 0 {
                     if Constants.Spells.Wizard_Spells.contains((shuffled_spells[0]["index"] as! Int)) {
                         picked_spells.append(shuffled_spells[0]["index"] as! Int)
                     }
@@ -371,10 +387,14 @@ struct SearchNpcView: View {
                 spells.append(contentsOf: picked_spells)
             }
 
-            spells.sort()
+            spells.sort() // Should sort by index, dont know yet how to do that
         }
         
-        eventManager.addNpcToList(npc: NPC(id: idx, name: name, template: template, is_male: is_male, race: race, ac: ac, hit_points: hit_points, hit_dice: selected_hd, num_HD: num_hd, speed: speed, proficiency: prof, stats: stats, skills: skills, spells: spells))
+        for spell in spells {
+            print(Constants.Spells.All_spells[spell])
+        }
+        
+        eventManager.addNpcToList(npc: NPC(id: idx, name: name, template: template, is_male: is_male, race: race, ac: ac, hit_points: hit_points, hit_dice: selected_hd, num_HD: num_hd, speed: speed, proficiency: prof, stats: stats, modifiers: modifiers, skills: skills, spells: spells))
     }
 }
 

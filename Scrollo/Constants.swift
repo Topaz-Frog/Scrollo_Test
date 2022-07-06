@@ -13,6 +13,9 @@ struct Constants {
     
     struct Fonts { // Powstawiać wszędzie!
         static let DefaultText = Font.custom("Avenir", fixedSize: 20).weight(.black)
+        static let BigText = Font.custom("Avenir", fixedSize: 30).weight(.semibold)
+        static let MediumText = Font.custom("Avenir", fixedSize: 15).weight(.semibold)
+        static let SmallText = Font.custom("Avenir", fixedSize: 10).weight(.semibold)
     }
     
     struct NPCsGenerator {
@@ -21,12 +24,12 @@ struct Constants {
         static let Combat_Classes = ["Barbarian","Bard","Cleric","Fighter","Wizard"]
         static let Non_combat_Classes = ["Aristocrat","Artisan","Inkeeper","Scholar"]
         static let All_Classes = ["Random","Combat class"] + Combat_Classes + ["Non-combat class"] + Non_combat_Classes
-        static let Classes_Stats_Prio = [[],[],[1,3,2,6,5,4],[6,2,5,4,3,1],[5,4,3,6,1,2],[5,3,4,2,1,6],[1,2,3,6,4,5],[6,3,4,1,2,5],[],[6,4,5,2,3,1] ,[5,1,6,2,3,4],[3,4,2,6,5,1],[6,3,5,1,2,4]]
+        static let Classes_Stats_Prio = [[],[],[1,3,2,6,5,4],[6,2,5,4,3,1],[5,4,3,6,1,2],[1,2,3,6,4,5],[6,3,4,1,2,5],[],[6,4,5,2,3,1] ,[5,1,6,2,3,4],[3,4,2,6,5,1],[6,3,5,1,2,4]]
         static let Basic_Races = ["Human","Half Elf","Half Orc", "Dwarf"]
         static let Exotic_Races = ["Tabaxi","Aarakocra","Goliath"]
         static let All_Races = ["Random","Basic race"] + Basic_Races + ["Exotic race"] + Exotic_Races
         static let Base_AC = 10
-        static let Maximum_HD = 31 // added +1 for random number picker
+        static let Maximum_HD = 30 // added +1 for random number picker
         static let Hit_Dices = [2, 4, 6, 8, 10, 12, 20, 100]
         static let Stats_Short = ["STR","DEX","CON","INT","WIS","CHA"]
         static let Skills = ["Acrobatics","Animal Handling","Arcana","Athletics","Deception","History","Insight","Intimidation", "Investigation","Medicine","Nature","Perception","Performance","Persuasion","Religion","Sleight of Hand","Stealth","Survival"]

@@ -2,7 +2,7 @@ import Foundation
 // Zmienić żeby nie było nigdzie genManager
 class EventManager: ObservableObject {
     @Published var createdNPCs = [
-        NPC(id:0, name:"Erwin", template:0, is_male:true, race: 1, ac:13, hit_points:0, hit_dice:0, num_HD:1, speed:30, proficiency: 1, stats:[20,12,20,8,8,8], skills:[0,3,7,10,12], spells:[Int]())
+        NPC(id:0, name:"Erwin", template:0, is_male:true, race: 1, ac:13, hit_points:0, hit_dice:0, num_HD:1, speed:30, proficiency: 1, stats:[20,12,20,8,8,8], modifiers:[5,1,5,-1,-1,-1], skills:[0,3,7,10,12], spells:[Int]())
     ]
     
     @Published var allGenerators = [

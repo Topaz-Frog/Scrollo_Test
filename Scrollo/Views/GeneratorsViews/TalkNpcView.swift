@@ -1,11 +1,15 @@
-//
-//  TalkNpcView.swift
-//  Scrollo
-//
-//  Created by Erwin Marysiok on 02/07/2022.
-//
-
 import SwiftUI
+
+struct Line: Shape {
+    func path(in rect: CGRect) -> Path {
+        var path = Path()
+
+        path.move(to: CGPoint(x: rect.minX + 20, y: rect.minY))
+        path.addLine(to: CGPoint(x: rect.maxX - 20, y: rect.minY))
+
+        return path
+    }
+}
 
 struct TalkNpcView: View {
     
@@ -17,6 +21,8 @@ struct TalkNpcView: View {
     @State private var selected_race = 0
     @State private var selected_hd = 0
     @State private var num_hd = 1
+    
+    let words = ["This", "is", "an", "example"]
     
     var body: some View {
         VStack(spacing: 0) {
@@ -31,130 +37,165 @@ struct TalkNpcView: View {
             }
             .foregroundColor(Constants.Colors.DarkBlueText)
             
-            HStack {
-                Spacer()
-                
-                VStack {
-                    Text("\(npc_idx)")
-                        .font(Constants.Fonts.DefaultText)
+            VStack(alignment: .leading) {
+                Group {
+                    HStack {
+                        Text("\(eventManager.getNPC(id: npc_idx).name)")
+                            .font(Constants.Fonts.BigText)
+                        
+                        Text(" : ")
+                            .font(Constants.Fonts.BigText)
+                        
+                        Text("\(Constants.NPCsGenerator.All_Classes[eventManager.getNPC(id: npc_idx).template])")
+                            .font(Constants.Fonts.BigText)
+                    }
+                    .padding(.horizontal, 20)
                     
-                    Text("\(eventManager.getNPC(id: npc_idx).name)")
-                        .font(Constants.Fonts.DefaultText)
+                    HStack {
+                        if eventManager.getNPC(id: npc_idx).is_male {
+                            Text("Male ")
+                                .font(Constants.Fonts.SmallText)
+                                .foregroundColor(.gray)
+                        } else {
+                            Text("Female ")
+                                .font(Constants.Fonts.SmallText)
+                                .foregroundColor(.gray)
+                        }
+                        
+                        Text("\(Constants.NPCsGenerator.All_Races[eventManager.getNPC(id: npc_idx).race])")
+                            .font(Constants.Fonts.SmallText)
+                            .foregroundColor(.gray)
+                        
+                        Spacer()
+                        
+                        Text("ID:\(npc_idx)")
+                            .font(Constants.Fonts.SmallText)
+                            .foregroundColor(.gray)
+                    }
+                    .padding(.horizontal, 20)
                     
-                    Text("\(eventManager.getNPC(id: npc_idx).template)")
-                        .font(Constants.Fonts.DefaultText)
+                    Line()
+                        .stroke(Constants.Colors.LightBlueBackground, style: StrokeStyle(lineWidth: 6, lineCap: .round, lineJoin: .round))
+                        .frame(width: UIScreen.screenWidth, height: 10)
                     
-                    Text("\(eventManager.getNPC(id: npc_idx).race)")
-                        .font(Constants.Fonts.DefaultText)
+                    Group {
+                        Text("**Armor Class**: \(eventManager.getNPC(id: npc_idx).ac)")
+                            .font(Constants.Fonts.MediumText)
+                        
+                        Text("**Hit Points**: \(eventManager.getNPC(id: npc_idx).hit_points) (\(eventManager.getNPC(id: npc_idx).num_HD)d\(Constants.NPCsGenerator.Hit_Dices[eventManager.getNPC(id: npc_idx).hit_dice]) \(eventManager.getNPC(id: npc_idx).modifiers[2] < 0 ? " " : " + ") \(eventManager.getNPC(id: npc_idx).num_HD * eventManager.getNPC(id: npc_idx).modifiers[2]))")
+                            .font(Constants.Fonts.MediumText)
+                        
+                        Text("**Speed**: \(eventManager.getNPC(id: npc_idx).speed)ft. (\(eventManager.getNPC(id: npc_idx).speed * 3 / 10) m / \(eventManager.getNPC(id: npc_idx).speed / 5) sqr)")
+                            .font(Constants.Fonts.MediumText)
+                        
+                        Text("**Proficiency**: +\(eventManager.getNPC(id: npc_idx).proficiency)")
+                            .font(Constants.Fonts.MediumText)
+                        
+                    }
+                    .padding(.horizontal, 20)
                     
-                    Text("\(eventManager.getNPC(id: npc_idx).ac)")
-                        .font(Constants.Fonts.DefaultText)
-                    
-                    Text("\(eventManager.getNPC(id: npc_idx).hit_points)")
-                        .font(Constants.Fonts.DefaultText)
-                    
-                    Text("\(eventManager.getNPC(id: npc_idx).num_HD)")
-                        .font(Constants.Fonts.DefaultText)
-                    
-                    Text("\(eventManager.getNPC(id: npc_idx).hit_dice)")
-                        .font(Constants.Fonts.DefaultText)
-                    
-                    Spacer()
+                    Line()
+                        .stroke(Constants.Colors.LightBlueBackground, style: StrokeStyle(lineWidth: 6, lineCap: .round, lineJoin: .round))
+                        .frame(width: UIScreen.screenWidth, height: 10)
                 }
-                .padding(.top,20)
+                
+                HStack(alignment: .center) {
+                    VStack(alignment: .center) {
+                        Text("STR")
+                            .fontWeight(.black)
+                            .font(Constants.Fonts.MediumText)
+                        
+                        Text("\(eventManager.getNPC(id: npc_idx).stats[0]) (\(eventManager.getNPC(id: npc_idx).modifiers[0] < 0 ? String(eventManager.getNPC(id: npc_idx).modifiers[0]) : "+" + String(eventManager.getNPC(id: npc_idx).modifiers[0])))")
+                            .font(Constants.Fonts.MediumText)
+                    }
+                    
+                    VStack(alignment: .center) {
+                        Text("DEX")
+                            .fontWeight(.black)
+                            .font(Constants.Fonts.MediumText)
+                        
+                        Text("\(eventManager.getNPC(id: npc_idx).stats[1]) (\(eventManager.getNPC(id: npc_idx).modifiers[1] < 0 ? String(eventManager.getNPC(id: npc_idx).modifiers[1]) : "+" + String(eventManager.getNPC(id: npc_idx).modifiers[1])))")
+                            .font(Constants.Fonts.MediumText)
+                    }
+                    
+                    VStack(alignment: .center) {
+                        Text("CON")
+                            .fontWeight(.black)
+                            .font(Constants.Fonts.MediumText)
+                        
+                        Text("\(eventManager.getNPC(id: npc_idx).stats[2]) (\(eventManager.getNPC(id: npc_idx).modifiers[2] < 0 ? String(eventManager.getNPC(id: npc_idx).modifiers[2]) : "+" + String(eventManager.getNPC(id: npc_idx).modifiers[2])))")
+                            .font(Constants.Fonts.MediumText)
+                    }
+                    
+                    VStack(alignment: .center) {
+                        Text("INT")
+                            .fontWeight(.black)
+                            .font(Constants.Fonts.MediumText)
+                        
+                        Text("\(eventManager.getNPC(id: npc_idx).stats[3]) (\(eventManager.getNPC(id: npc_idx).modifiers[3] < 0 ? String(eventManager.getNPC(id: npc_idx).modifiers[3]) : "+" + String(eventManager.getNPC(id: npc_idx).modifiers[3])))")
+                            .font(Constants.Fonts.MediumText)
+                    }
+                    
+                    VStack(alignment: .center) {
+                        Text("WIS")
+                            .fontWeight(.black)
+                            .font(Constants.Fonts.MediumText)
+                        
+                        Text("\(eventManager.getNPC(id: npc_idx).stats[4]) (\(eventManager.getNPC(id: npc_idx).modifiers[4] < 0 ? String(eventManager.getNPC(id: npc_idx).modifiers[4]) : "+" + String(eventManager.getNPC(id: npc_idx).modifiers[4])))")
+                            .font(Constants.Fonts.MediumText)
+                    }
+                    
+                    VStack(alignment: .center) {
+                        Text("CHA")
+                            .fontWeight(.black)
+                            .font(Constants.Fonts.MediumText)
+                        
+                        Text("\(eventManager.getNPC(id: npc_idx).stats[5]) (\(eventManager.getNPC(id: npc_idx).modifiers[5] < 0 ? String(eventManager.getNPC(id: npc_idx).modifiers[5]) : "+" + String(eventManager.getNPC(id: npc_idx).modifiers[5])))")
+                            .font(Constants.Fonts.MediumText)
+                    }
+                }
+                .padding(.horizontal, 20)
+                .frame(width: UIScreen.screenWidth,alignment: .center)
+                
+                Group {
+                    getSkills().reduce(Text("\nSkills: ").font(Constants.Fonts.MediumText).fontWeight(.black), { $0 + Text($1).font(Constants.Fonts.MediumText) + Text("  ").font(Constants.Fonts.MediumText)} )
+                }
+                .padding(.horizontal, 20)
+                
+                Line()
+                    .stroke(Constants.Colors.LightBlueBackground, style: StrokeStyle(lineWidth: 6, lineCap: .round, lineJoin: .round))
+                    .frame(width: UIScreen.screenWidth, height: 10)
+                
+                Text("Actions")
+                    .fontWeight(.semibold)
+                    .font(Constants.Fonts.DefaultText)
+                    .padding(.horizontal, 20)
+                
+                if eventManager.getNPC(id: npc_idx).spells.count > 0 {
+                    Line()
+                        .stroke(Constants.Colors.LightBlueBackground, style: StrokeStyle(lineWidth: 6, lineCap: .round, lineJoin: .round))
+                        .frame(width: UIScreen.screenWidth, height: 10)
+                    
+                    Text("Spells")
+                        .fontWeight(.semibold)
+                        .font(Constants.Fonts.DefaultText)
+                        .padding(.horizontal, 20)
+                    
+                    Text("**Spellcasting.** The \(eventManager.getNPC(id: npc_idx).template) has \(eventManager.getNPC(id: npc_idx).num_HD) level(s). Its spellcasting ability")
+                        .font(Constants.Fonts.MediumText)
+                        .padding(.horizontal, 20)
+                    
+                    ForEach(0..<Constants.Spells.Wizard_Spells_Per_Level[getSpellcasting()].count, id: \.self) {
+                        getSpells(level: $0).reduce(Text("\($0 == 0 ? "Cantrips (at will): ": String($0) + ". level (\(Constants.Spells.Wizard_Spells_Per_Level[eventManager.getNPC(id: npc_idx).num_HD][$0]) slots): ")").font(Constants.Fonts.MediumText).fontWeight(.black), { $0 + Text($1).font(Constants.Fonts.MediumText) + Text(", ").font(Constants.Fonts.MediumText)} )
+                        .padding(.horizontal, 20)
+                    }
+                }
                 
                 Spacer()
             }
+            .padding(.top,20)
             .background(Constants.Colors.DarkBlueBackground)
             .foregroundColor(Color.white)
-//            Form {
-//                HStack(alignment: .top, spacing: 15) {
-//
-//                    VStack(alignment: .leading, spacing: 20) {
-//                        Menu {
-//                            Picker(selection: $selected_template) {
-//                                ForEach(0..<Constants.NPCsGenerator.All_Classes.count) {
-//                                    Text(Constants.NPCsGenerator.All_Classes[$0])
-//                                }
-//                            } label: { }
-//                        } label: {
-//                            Text(Constants.NPCsGenerator.All_Classes[selected_template])
-//                                .font(Constants.Fonts.DefaultText)
-//                                .foregroundColor(Color.white)
-//                        }
-//
-//
-//                        Spacer()
-//
-//                        Section(header:Text("Race")) {
-//                            Menu {
-//                                Picker(selection: $selected_race) {
-//                                    ForEach(0..<Constants.NPCsGenerator.All_Races.count) {
-//                                        Text(Constants.NPCsGenerator.All_Races[$0])
-//                                    }
-//                                } label: { }
-//                            } label: {
-//                                Text(Constants.NPCsGenerator.All_Races[selected_race])
-//                                    .font(Constants.Fonts.DefaultText)
-//                                    .foregroundColor(Color.white)
-//                            }
-//                        }
-//
-//                        Spacer()
-//
-//                        Section(header:Text("Hit dice")) {
-//
-//                            HStack {
-//                                Menu {
-//                                    Picker(selection: $num_hd) {
-//                                        ForEach(1...Constants.NPCsGenerator.Maximum_HD, id: \.self) { number in
-//                                            Text("\(number)")
-//                                        }
-//                                    } label: { }
-//                                } label: {
-//                                    Text("\(num_hd)")
-//                                        .font(Constants.Fonts.DefaultText)
-//                                        .foregroundColor(Color.white)
-//                                }
-//
-//                                Spacer()
-//
-//                                Menu {
-//                                    Picker(selection: $selected_hd) {
-//                                        ForEach(0..<Constants.NPCsGenerator.Hit_Dices.count) {
-//                                            Text("d\(Constants.NPCsGenerator.Hit_Dices[$0])")
-//                                        }
-//                                    } label: { }
-//                                } label: {
-//                                    Text("d\(Constants.NPCsGenerator.Hit_Dices[selected_hd])")
-//                                        .font(Constants.Fonts.DefaultText)
-//                                        .foregroundColor(Color.white)
-//                                }
-//
-//                                Spacer()
-//                            }
-//                        }
-//
-//                        Spacer()
-//
-//                        HStack {
-//                            Spacer()
-//
-//                            Button() {
-//
-//                            } label: {
-//                                Text("Find dat NPC!")
-//                                    .font(Constants.Fonts.DefaultText)
-//                                    .foregroundColor(Constants.Colors.DarkBlueText)
-//                            }
-//                        }
-//                    }
-//                    .padding(.top, 20)
-//                }
-//                .listRowBackground(Constants.Colors.LightBlueBackground)
-//            }
-//            .background(Constants.Colors.DarkBlueBackground)
-//            .foregroundColor(Color.white)
         }
         .background(Constants.Colors.OrangeBackground)
         .navigationBarBackButtonHidden(true)
@@ -168,6 +209,42 @@ struct TalkNpcView: View {
                 }
             }
         }
+    }
+    
+    private func getProf() -> Int {
+        return eventManager.getNPC(id: npc_idx).proficiency
+    }
+    
+    private func getSkills() -> [String] {
+        var skills_strings = [String]()
+        for skill in eventManager.getNPC(id: npc_idx).skills {
+            let prof_mod = eventManager.getNPC(id: npc_idx).modifiers[Constants.NPCsGenerator.Skills_Tuples[skill].1] + eventManager.getNPC(id: npc_idx).proficiency
+            if prof_mod < 0 {
+                skills_strings.append((Constants.NPCsGenerator.Skills_Tuples[skill].0 + " " + String(prof_mod)))
+            } else {
+                skills_strings.append((Constants.NPCsGenerator.Skills_Tuples[skill].0 + " +" + String(prof_mod)))
+            }
+        }
+        return skills_strings
+    }
+    
+    private func getSpells(level:Int) -> [String] {
+        var spells_strings = [String]()
+        var spells_indexes = [Int]()
+        for spell in Constants.Spells.All_spells_by_level[level][0] {
+            spells_indexes.append(spell["index"] as! Int)
+        }
+        for spell in eventManager.getNPC(id: npc_idx).spells {
+            if spells_indexes.contains(Constants.Spells.All_spells[spell]["index"] as! Int) {
+                spells_strings.append(Constants.Spells.All_spells[spell]["name"] as! String)
+            }
+        }
+        print(spells_strings)
+        return spells_strings
+    }
+    
+    private func getSpellcasting() -> Int {
+        return eventManager.getNPC(id: npc_idx).num_HD > 20 ? 20 : eventManager.getNPC(id: npc_idx).num_HD
     }
 }
 
