@@ -11,91 +11,95 @@ struct GeneratorCreationView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            ScrollView {
-                
-                //MARK: Name field
-                VStack(alignment: .leading) {
-                    Text("NAME")
-                        .font(.system(.headline, design: .rounded))
-                        .foregroundColor(Color.init(red: 217/255, green: 125/255, blue: 84/255))
-                    TextField("Fill in the generator name", text: $name)
-                        .font(.system(.body, design: .rounded))
-                        .textFieldStyle(PlainTextFieldStyle())
-                        .frame(height: 20)
-                        .padding(10)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 5)
-                                .stroke(Color.init(red: 217/255, green: 125/255, blue: 84/255), lineWidth: 1)
-                        )
-                        .padding(.vertical, 10)
+            Form {
+                Group {
+                    
+                    //MARK: Name field
+                    VStack(alignment: .leading) {
+                        Text("NAME")
+                            .font(.system(.headline, design: .rounded))
+                        TextField("Fill in the generator name", text: $name)
+                            .font(.system(.body, design: .rounded))
+                            .foregroundColor(Color.black)
+                            .textFieldStyle(PlainTextFieldStyle())
+                            .frame(height: 20)
+                            .padding(10)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 5)
+                                    .stroke(lineWidth: 1)
+                            )
+                            .padding(.vertical, 10)
 
-                }
-                
-                //MARK: Image field
-                VStack(alignment: .leading) {
-                    Text("IMAGE")
-                        .font(.system(.headline, design: .rounded))
-                        .foregroundColor(Color.init(red: 217/255, green: 125/255, blue: 84/255))
-                    TextField("Fill in the generator image name", text: $imageName)
-                        .font(.system(.body, design: .rounded))
-                        .textFieldStyle(PlainTextFieldStyle())
-                        .frame(height: 20)
-                        .padding(10)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 5)
-                                .stroke(Color.init(red: 217/255, green: 125/255, blue: 84/255), lineWidth: 1)
-                        )
-                        .padding(.vertical, 10)
+                    }
+                    
+                    //MARK: Image field
+                    VStack(alignment: .leading) {
+                        Text("IMAGE")
+                            .font(.system(.headline, design: .rounded))
+                        TextField("Fill in the generator image name", text: $imageName)
+                            .font(.system(.body, design: .rounded))
+                            .foregroundColor(Color.black)
+                            .textFieldStyle(PlainTextFieldStyle())
+                            .frame(height: 20)
+                            .padding(10)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 5)
+                                    .stroke(lineWidth: 1)
+                            )
+                            .padding(.vertical, 10)
 
-                }
-                
-                //MARK: Description field
-                VStack(alignment: .leading) {
-                    Text("DESCRIPTION")
-                        .font(.system(.headline, design: .rounded))
-                        .foregroundColor(Color.init(red: 217/255, green: 125/255, blue: 84/255))
-                    TextField("", text: $description)
-                        .font(.system(.body, design: .rounded))
-                        .textFieldStyle(PlainTextFieldStyle())
-                        .frame(height: 100, alignment: .top)
-                        .padding(10)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 5)
-                                .stroke(Color.init(red: 217/255, green: 125/255, blue: 84/255), lineWidth: 1)
-                        )
-                        .padding(.vertical, 10)
+                    }
+                    
+                    //MARK: Description field
+                    VStack(alignment: .leading) {
+                        Text("DESCRIPTION")
+                            .font(.system(.headline, design: .rounded))
+                            .foregroundColor(Color.init(red: 217/255, green: 125/255, blue: 84/255))
+                        TextField("", text: $description)
+                            .font(.system(.body, design: .rounded))
+                            .foregroundColor(Color.black)
+                            .textFieldStyle(PlainTextFieldStyle())
+                            .frame(height: 100, alignment: .top)
+                            .padding(10)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 5)
+                                    .stroke(lineWidth: 1)
+                            )
+                            .padding(.vertical, 10)
 
-                }
-                
-                //MARK: Content field
-                VStack(alignment: .leading) {
-                    Text("CONTENT")
-                        .font(.system(.headline, design: .rounded))
-                        .foregroundColor(Color.init(red: 217/255, green: 125/255, blue: 84/255))
-                    TextField("", text: $content)
-                        .font(.system(.body, design: .rounded))
-                        .textFieldStyle(PlainTextFieldStyle())
-                        .frame(height: 200, alignment: .top)
-                        .padding(10)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 5)
-                                .stroke(Color.init(red: 217/255, green: 125/255, blue: 84/255), lineWidth: 1)
-                        )
-                        .padding(.vertical, 10)
+                    }
+                    
+                    //MARK: Content field
+                    VStack(alignment: .leading) {
+                        Text("CONTENT")
+                            .font(.system(.headline, design: .rounded))
+                            .foregroundColor(Color.init(red: 217/255, green: 125/255, blue: 84/255))
+                        TextField("", text: $content)
+                            .font(.system(.body, design: .rounded))
+                            .foregroundColor(Color.black)
+                            .textFieldStyle(PlainTextFieldStyle())
+                            .frame(height: 200, alignment: .top)
+                            .padding(10)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 5)
+                                    .stroke(lineWidth: 1)
+                            )
+                            .padding(.vertical, 10)
 
+                    }
+                    
+                    //MARK: Is implemented
+                    Toggle(isOn: $isImplem) {
+                        Text("Is it implemented? (recommended false)")
+                            .font(.system(.headline, design: .rounded))
+                    }
+                    .toggleStyle(SwitchToggleStyle(tint: .orange))
                 }
-                
-                //MARK: Is implemented
-                Toggle(isOn: $isImplem) {
-                    Text("Is it implemented? (recommended false)")
-                        .font(.system(.headline, design: .rounded))
-                        .foregroundColor(Color.init(red: 217/255, green: 125/255, blue: 84/255))
-                }
+                .listRowBackground(Constants.Colors.DarkBlueBackground)
+                .foregroundColor(Color.init(red: 217/255, green: 125/255, blue: 84/255))
             }
-            .padding()
-            .navigationTitle("New generator")
         }
-        .background(Color.init(red: 51/255, green: 72/255, blue: 86/255))
+        .background(Constants.Colors.LightBlueBackground)
         .navigationBarBackButtonHidden(true)
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
