@@ -30,6 +30,7 @@
 		E7C053A2286F76C100ED4709 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C053A1286F76C100ED4709 /* Constants.swift */; };
 		E7C053A42870543300ED4709 /* TalkNpcView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C053A32870543300ED4709 /* TalkNpcView.swift */; };
 		E7C053A6287054FA00ED4709 /* GrowingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C053A5287054FA00ED4709 /* GrowingButton.swift */; };
+		E7C053A82876159B00ED4709 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C053A72876159B00ED4709 /* Line.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,7 @@
 		E7C053A1286F76C100ED4709 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E7C053A32870543300ED4709 /* TalkNpcView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkNpcView.swift; sourceTree = "<group>"; };
 		E7C053A5287054FA00ED4709 /* GrowingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowingButton.swift; sourceTree = "<group>"; };
+		E7C053A72876159B00ED4709 /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 				AA3EF1DB27AACDAE00CE248E /* TitleBar.swift */,
 				AA3EF1D927AACCA100CE248E /* NavigationBar.swift */,
 				E7C053A5287054FA00ED4709 /* GrowingButton.swift */,
+				E7C053A72876159B00ED4709 /* Line.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 				AA3EF1E427AB280D00CE248E /* EventManager.swift in Sources */,
 				E7C053A0286F6B3000ED4709 /* NPC.swift in Sources */,
 				E7C0539C286F67A600ED4709 /* SearchNpcView.swift in Sources */,
+				E7C053A82876159B00ED4709 /* Line.swift in Sources */,
 				E7C053A42870543300ED4709 /* TalkNpcView.swift in Sources */,
 				AA3EF1EA27B077C700CE248E /* AllGeneratorsView.swift in Sources */,
 				AAFD07DD275BED60007C7C8B /* ScrolloApp.swift in Sources */,

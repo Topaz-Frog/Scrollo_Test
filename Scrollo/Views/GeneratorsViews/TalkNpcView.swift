@@ -1,16 +1,5 @@
 import SwiftUI
 
-struct Line: Shape {
-    func path(in rect: CGRect) -> Path {
-        var path = Path()
-
-        path.move(to: CGPoint(x: rect.minX + 20, y: rect.minY))
-        path.addLine(to: CGPoint(x: rect.maxX - 20, y: rect.minY))
-
-        return path
-    }
-}
-
 struct TalkNpcView: View {
     
     @EnvironmentObject var eventManager: EventManager
@@ -239,7 +228,6 @@ struct TalkNpcView: View {
                 spells_strings.append(Constants.Spells.All_spells[spell]["name"] as! String)
             }
         }
-        print(spells_strings)
         return spells_strings
     }
     

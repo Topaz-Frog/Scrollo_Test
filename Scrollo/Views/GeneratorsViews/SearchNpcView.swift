@@ -13,6 +13,7 @@ struct SearchNpcView: View {
     @Environment(\.dismiss) private var dismiss
     @Binding var generator: Generator
     @State private var selected_view: String? = nil
+    @State private var selected_id = 0
     @State private var selected_class = 0
     @State private var selected_race = 0
     @State private var selected_hd = 0
@@ -45,21 +46,52 @@ struct SearchNpcView: View {
             .foregroundColor(Constants.Colors.DarkBlueText)
             
             Form {
-                VStack(alignment: .leading, spacing: 20) {
-                    Section(header: Text("Search by ID")) {
-                        HStack {
-                            
-                        }
-                    }
-                }
-            }
-            .background(Constants.Colors.DarkBlueBackground)
-            .foregroundColor(Color.white)
-            
-            Form {
                 HStack(alignment: .top, spacing: 15) {
                     
                     VStack(alignment: .leading, spacing: 20) {
+                        Section(header: Text("Search by ID")) {
+                            HStack {
+                                Menu {
+                                    Picker(selection: $selected_id) {
+                                        if eventManager.getLastNpcIdx() > 0 {
+                                            ForEach(0..<(eventManager.getLastNpcIdx() + 1)) {
+                                                Text("\($0)")
+                                            }
+                                        } else {
+                                            Text("0")
+                                        }
+                                    } label: { }
+                                } label: {
+                                    Text("\(selected_id)")
+                                        .font(Constants.Fonts.DefaultText)
+                                        .foregroundColor(Color.white)
+                                    
+                                    Spacer()
+                                    
+                                    Text("\(Image(systemName: "chevron.right"))")
+                                        .foregroundColor(.white)
+                                }
+                            }
+                            
+                            HStack {
+                                Spacer()
+                                
+                                Button() {
+                                    idx = selected_id
+                                    selected_view = "RandomNpc"
+                                } label: {
+                                    Text("Get dat NPC!")
+                                        .font(Constants.Fonts.DefaultText)
+                                        .foregroundColor(Constants.Colors.DarkBlueText)
+                                }
+                                .buttonStyle(GrowingButton(background_color: Constants.Colors.OrangeBackground))
+                            }
+                        }
+                        
+                        Line()
+                            .stroke(Constants.Colors.DarkBlueBackground, style: StrokeStyle(lineWidth: 6, lineCap: .round, lineJoin: .round))
+                            .frame(width: UIScreen.screenWidth * 0.85, height: 5)
+                            .padding(.vertical, 5)
                         
                         Section(header:Text("Template")) {
                             Menu {
@@ -80,7 +112,10 @@ struct SearchNpcView: View {
                             }
                         }
                         
-                        Spacer()
+                        Line()
+                            .stroke(Constants.Colors.DarkBlueBackground, style: StrokeStyle(lineWidth: 6, lineCap: .round, lineJoin: .round))
+                            .frame(width: UIScreen.screenWidth * 0.85, height: 2)
+                            .padding(.vertical, 5)
                         
                         Section(header:Text("Race")) {
                             Menu {
@@ -101,7 +136,10 @@ struct SearchNpcView: View {
                             }
                         }
                         
-                        Spacer()
+                        Line()
+                            .stroke(Constants.Colors.DarkBlueBackground, style: StrokeStyle(lineWidth: 6, lineCap: .round, lineJoin: .round))
+                            .frame(width: UIScreen.screenWidth * 0.85, height: 2)
+                            .padding(.vertical, 5)
                         
                         Section(header:Text("Hit dice")) {
                             
@@ -146,29 +184,34 @@ struct SearchNpcView: View {
                             }
                         }
                         
-                        Spacer()
-                        
-                        Toggle(isOn: $is_chaotic) {
-                            Text("Chaotic stats?")
-                                .font(Constants.Fonts.DefaultText)
-                                .foregroundColor(Color.white)
-                        }
-                        .toggleStyle(SwitchToggleStyle(tint: .orange))
-                        
-                        Spacer()
-                        
-                        HStack {
+                        Group {
+                            Line()
+                                .stroke(Constants.Colors.DarkBlueBackground, style: StrokeStyle(lineWidth: 6, lineCap: .round, lineJoin: .round))
+                                .frame(width: UIScreen.screenWidth * 0.85, height: 2)
+                                .padding(.vertical, 5)
+                            
+                            Toggle(isOn: $is_chaotic) {
+                                Text("Chaotic stats?")
+                                    .font(Constants.Fonts.DefaultText)
+                                    .foregroundColor(Color.white)
+                            }
+                            .toggleStyle(SwitchToggleStyle(tint: .orange))
+                            
                             Spacer()
                             
-                            Button() {
-                                createNPC()
-                                selected_view = "RandomNpc"
-                            } label: {
-                                Text("Find dat NPC!")
-                                    .font(Constants.Fonts.DefaultText)
-                                    .foregroundColor(Constants.Colors.DarkBlueText)
+                            HStack {
+                                Spacer()
+                                
+                                Button() {
+                                    createNPC()
+                                    selected_view = "RandomNpc"
+                                } label: {
+                                    Text("Find dat NPC!")
+                                        .font(Constants.Fonts.DefaultText)
+                                        .foregroundColor(Constants.Colors.DarkBlueText)
+                                }
+                                .buttonStyle(GrowingButton(background_color: Constants.Colors.OrangeBackground))
                             }
-                            .buttonStyle(GrowingButton(background_color: Constants.Colors.OrangeBackground))
                         }
                     }
                     .padding(.top, 20)
