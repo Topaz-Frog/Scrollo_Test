@@ -3,7 +3,7 @@ import SwiftUI
 // Render png animation in blender with transparent background
 
 struct RollDicesView: View {
-    @EnvironmentObject var genManager: EventManager
+    @EnvironmentObject var eventManager: EventManager
     @Environment(\.presentationMode) var presentationMode
     @Binding var generator: Generator
     @State private var showingAlert = false
@@ -24,7 +24,7 @@ struct RollDicesView: View {
                 
                 Button {
                     self.presentationMode.wrappedValue.dismiss()
-                    genManager.removeFromAdded(generator: generator)
+                    eventManager.removeFromAdded(generator: generator)
                 } label: {
                     Image(systemName: "trash.circle")
                         .imageScale(.large)
@@ -32,7 +32,7 @@ struct RollDicesView: View {
                         .padding(.trailing, 20)
                 }
             }
-            .foregroundColor(Color.init(red: 50/255, green: 71/255, blue: 75/255))
+            .foregroundColor(Constants.Colors.DarkBlueText)
             
             HStack(alignment: .top, spacing: 15) {
                 
@@ -61,9 +61,7 @@ struct RollDicesView: View {
                         
                         if isRolled {
                             Text("\(value)")
-                                .fontWeight(.black)
-                                .font(Font.custom("Avenir", size: 40))
-                                .foregroundColor(.white)
+                                .font(Constants.Fonts.DefaultText)
                                 .frame(alignment: .center)
                         }
                         
@@ -75,15 +73,11 @@ struct RollDicesView: View {
                             showingAlert = true
                         } label: {
                             Text("Roll the d\(d)")
-                                .fontWeight(.black)
-                                .font(Font.custom("Avenir", size: 20))
-                                .foregroundColor(.white)
+                                .font(Constants.Fonts.DefaultText)
                                 .frame(alignment: .center)
                                 .frame(width: 200, height: 60)
-                                .background(Color.init(red: 110/255, green: 140/255, blue: 160/255))
-                                .cornerRadius(20)
-                                .contentShape(Rectangle())
                         }
+                        .buttonStyle(GrowingButton(background_color: Constants.Colors.LightBlueBackground))
 //                        .alert("Rolling!", isPresented: $showingAlert) {
 //                            Button("Nice!", role: .cancel) { }
 //                        }
@@ -97,10 +91,10 @@ struct RollDicesView: View {
                        minHeight: 0,
                        maxHeight: .infinity,
                        alignment: .topLeading)
-                .background(Color.init(red: 51/255, green: 72/255, blue: 86/255))
+                .background(Constants.Colors.DarkBlueBackground)
             }
         }
-        .background(Color.init(red: 217/255, green: 125/255, blue: 84/255))
+        .background(Constants.Colors.OrangeBackground)
         .navigationBarBackButtonHidden(true)
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
@@ -137,5 +131,6 @@ struct DiceButton: View {
 struct RollDicesView_Previews: PreviewProvider {
     static var previews: some View {
         RollDicesView(generator: .constant(Generator(name: "ENTER TOWN", image: "town", description: "Generate info about a town", content: "Not yet available", isImplemented: true)))
+            .environmentObject(EventManager())
     }
 }

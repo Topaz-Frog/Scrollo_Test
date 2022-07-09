@@ -39,5 +39,6 @@ struct AllGeneratorsView: View {
 struct AllGeneratorsView_Previews: PreviewProvider {
     static var previews: some View {
         AllGeneratorsView()
+            .environmentObject(EventManager())
     }
 }

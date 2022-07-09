@@ -1,17 +1,5 @@
 import SwiftUI
 
-struct Background<Content: View>: View {
-    private var content: Content
-
-    init(@ViewBuilder content: @escaping () -> Content) {
-        self.content = content()
-    }
-
-    var body: some View {
-        content
-    }
-}
-
 struct CallNumberView: View {
     @EnvironmentObject var genManager: EventManager
     @Environment(\.presentationMode) var presentationMode
@@ -45,7 +33,7 @@ struct CallNumberView: View {
                         .padding(.trailing, 20)
                 }
             }
-            .foregroundColor(Color.init(red: 50/255, green: 71/255, blue: 75/255))
+            .foregroundColor(Constants.Colors.DarkBlueText)
             
             HStack(alignment: .top, spacing: 15) {
                 
@@ -79,7 +67,7 @@ struct CallNumberView: View {
                                         .padding(10)
                                         .overlay(
                                             RoundedRectangle(cornerRadius: 5)
-                                                .stroke(Color.init(red: 217/255, green: 125/255, blue: 84/255), lineWidth: 1)
+                                                .stroke(Constants.Colors.OrangeBackground, lineWidth: 1)
                                         )
                                         .padding(.vertical, 10)
 
@@ -101,7 +89,7 @@ struct CallNumberView: View {
                                         .padding(10)
                                         .overlay(
                                             RoundedRectangle(cornerRadius: 5)
-                                                .stroke(Color.init(red: 217/255, green: 125/255, blue: 84/255), lineWidth: 1)
+                                                .stroke(Constants.Colors.OrangeBackground, lineWidth: 1)
                                         )
                                         .padding(.vertical, 10)
                                 }
@@ -123,20 +111,16 @@ struct CallNumberView: View {
                             }
                         } label: {
                             Text("I'm calling!")
-                                .fontWeight(.black)
-                                .font(Font.custom("Avenir", size: 20))
-                                .foregroundColor(.white)
+                                .font(Constants.Fonts.DefaultText)
                                 .frame(width: 200, height: 60, alignment: .center)
-                                .background(Color.init(red: 110/255, green: 140/255, blue: 160/255))
-                                .cornerRadius(20)
-                                .contentShape(Rectangle())
                         }
+                        .buttonStyle(GrowingButton(background_color: Constants.Colors.LightBlueBackground))
                         
                         Spacer()
                         
                         //MARK: Result
                         Circle()
-                            .fill(Color.init(red: 217/255, green: 125/255, blue: 84/255))
+                            .fill(Constants.Colors.OrangeBackground)
                             .frame(width: 200, height: 200)
                             .modifier(AnimatingNumberOverlay(number: value))
                         
@@ -151,10 +135,10 @@ struct CallNumberView: View {
                        minHeight: 0,
                        maxHeight: .infinity,
                        alignment: .topLeading)
-                .background(Color.init(red: 51/255, green: 72/255, blue: 86/255))
+                .background(Constants.Colors.DarkBlueBackground)
             }
         }
-        .background(Color.init(red: 217/255, green: 125/255, blue: 84/255))
+        .background(Constants.Colors.OrangeBackground)
         .navigationBarBackButtonHidden(true)
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
@@ -162,7 +146,7 @@ struct CallNumberView: View {
                         self.presentationMode.wrappedValue.dismiss()
                     })  {
                         Text("\(Image(systemName: "chevron.left")) \(" Saved generators")")
-                            .foregroundColor(.white)
+                            .foregroundColor(Constants.Colors.DarkBlueText)
                 }
             }
         }
@@ -204,7 +188,7 @@ struct AnimatingNumberOverlay: AnimatableModifier {
                                 .fontWeight(.black)
                                 .font(Font.custom("Avenir", size: 40))
                                 .frame(alignment: .center)
-                                .foregroundColor(Color.init(red: 51/255, green: 72/255, blue: 86/255))
+                                .foregroundColor(Constants.Colors.DarkBlueText)
         )
     }
 }
@@ -218,5 +202,6 @@ extension UIApplication {
 struct CallNumberView_Previews: PreviewProvider {
     static var previews: some View {
         CallNumberView(generator: .constant(Generator(name: "ENTER TOWN", image: "town", description: "Generate info about a town", content: "Not yet available", isImplemented: true)))
+            .environmentObject(EventManager())
     }
 }

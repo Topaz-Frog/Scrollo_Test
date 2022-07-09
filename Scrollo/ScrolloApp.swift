@@ -9,7 +9,7 @@ import SwiftUI
 
 @main
 struct ScrolloApp: App {
-    @StateObject var genManager = EventManager()
+    @StateObject var eventManager = EventManager()
     
     init(){
         UITableView.appearance().backgroundColor = .clear
@@ -17,8 +17,13 @@ struct ScrolloApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environmentObject(genManager)
+            if eventManager.isValidated {
+                ContentView()
+                    .environmentObject(eventManager)
+            } else {
+                LoginView()
+                    .environmentObject(eventManager)
+            }
         }
     }
 }

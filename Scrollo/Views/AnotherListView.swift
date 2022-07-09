@@ -66,5 +66,6 @@ struct AnotherListView: View {
 struct AnotherListView_Previews: PreviewProvider {
     static var previews: some View {
         AnotherListView()
+            .environmentObject(EventManager())
     }
 }

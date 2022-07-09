@@ -240,7 +240,8 @@ struct SearchNpcView: View {
         }
     }
     
-    private func createNPC() {
+    // move it to event manager
+    public func createNPC() {
         let last_idx = eventManager.getLastNpcIdx()
         var name: String = ""
         var template: Int = selected_class
@@ -444,5 +445,6 @@ struct SearchNpcView: View {
 struct SearchNpcView_Previews: PreviewProvider {
     static var previews: some View {
         SearchNpcView(generator: .constant(Generator(name: "ENTER TOWN", image: "town", description: "Generate info about a town", content: "Not yet available", isImplemented: true)))
+            .environmentObject(EventManager())
     }
 }

@@ -156,5 +156,6 @@ struct FormTextField: View {
 struct GeneratorCreationView_Previews: PreviewProvider {
     static var previews: some View {
         GeneratorCreationView()
+            .environmentObject(EventManager())
     }
 }

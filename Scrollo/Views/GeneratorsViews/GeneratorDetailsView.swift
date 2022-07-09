@@ -75,5 +75,6 @@ struct GeneratorDetailsView: View {
 struct GeneratorDetailsView_Previews: PreviewProvider {
     static var previews: some View {
         GeneratorDetailsView(generator: .constant(Generator(name: "ENTER TOWN", image: "town", description: "Generate info about a town", content: "Not yet available", isImplemented: true)))
+            .environmentObject(EventManager())
     }
 }

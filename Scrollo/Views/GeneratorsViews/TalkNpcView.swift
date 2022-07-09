@@ -194,7 +194,7 @@ struct TalkNpcView: View {
                         dismiss()
                     })  {
                         Text("\(Image(systemName: "chevron.left")) \(" Saved generators")")
-                            .foregroundColor(.white)
+                            .foregroundColor(Constants.Colors.DarkBlueText)
                 }
             }
         }
@@ -239,5 +239,6 @@ struct TalkNpcView: View {
 struct TalkNpcView_Previews: PreviewProvider {
     static var previews: some View {
         TalkNpcView(generator: .constant(Generator(name: "ENTER TOWN", image: "town", description: "Generate info about a town", content: "Not yet available", isImplemented: true)), npc_idx: 0)
+            .environmentObject(EventManager())
     }
 }

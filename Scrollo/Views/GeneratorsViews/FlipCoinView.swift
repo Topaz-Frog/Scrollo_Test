@@ -172,5 +172,6 @@ struct Coin: View {
 struct FlipCoinView_Previews: PreviewProvider {
     static var previews: some View {
         FlipCoinView(generator: .constant(Generator(name: "ENTER TOWN", image: "town", description: "Generate info about a town", content: "Not yet available", isImplemented: true)))
+            .environmentObject(EventManager())
     }
 }

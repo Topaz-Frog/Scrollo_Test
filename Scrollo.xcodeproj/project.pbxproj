@@ -31,6 +31,15 @@
 		E7C053A42870543300ED4709 /* TalkNpcView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C053A32870543300ED4709 /* TalkNpcView.swift */; };
 		E7C053A6287054FA00ED4709 /* GrowingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C053A5287054FA00ED4709 /* GrowingButton.swift */; };
 		E7C053A82876159B00ED4709 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C053A72876159B00ED4709 /* Line.swift */; };
+		E7C053AA28772E2D00ED4709 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C053A928772E2D00ED4709 /* LoadingView.swift */; };
+		E7C053AC28772F2900ED4709 /* Dice.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C053AB28772F2900ED4709 /* Dice.swift */; };
+		E7F19FA8287A0F7300703934 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F19FA7287A0F7300703934 /* Credentials.swift */; };
+		E7F19FAB287A101900703934 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F19FAA287A101900703934 /* APIService.swift */; };
+		E7F19FAF287A11E700703934 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F19FAE287A11E700703934 /* LoginView.swift */; };
+		E7F19FB1287A126800703934 /* EndEditBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F19FB0287A126800703934 /* EndEditBackground.swift */; };
+		E7F19FB3287A13E600703934 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F19FB2287A13E600703934 /* LoginViewModel.swift */; };
+		E7F19FB6287A38AB00703934 /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = E7F19FB5287A38AB00703934 /* SwiftKeychainWrapper */; };
+		E7F19FB8287A393D00703934 /* KeyChainStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F19FB7287A393D00703934 /* KeyChainStorage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +87,14 @@
 		E7C053A32870543300ED4709 /* TalkNpcView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkNpcView.swift; sourceTree = "<group>"; };
 		E7C053A5287054FA00ED4709 /* GrowingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowingButton.swift; sourceTree = "<group>"; };
 		E7C053A72876159B00ED4709 /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
+		E7C053A928772E2D00ED4709 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		E7C053AB28772F2900ED4709 /* Dice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dice.swift; sourceTree = "<group>"; };
+		E7F19FA7287A0F7300703934 /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
+		E7F19FAA287A101900703934 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		E7F19FAE287A11E700703934 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		E7F19FB0287A126800703934 /* EndEditBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndEditBackground.swift; sourceTree = "<group>"; };
+		E7F19FB2287A13E600703934 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		E7F19FB7287A393D00703934 /* KeyChainStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainStorage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7F19FB6287A38AB00703934 /* SwiftKeychainWrapper in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,9 +127,12 @@
 			isa = PBXGroup;
 			children = (
 				AA3EF1E727B06FEC00CE248E /* ContentView.swift */,
+				E7F19FAE287A11E700703934 /* LoginView.swift */,
+				E7F19FB2287A13E600703934 /* LoginViewModel.swift */,
+				AA3EF1D827AACA2700CE248E /* Components */,
+				AA838DBB27B6849200659EF5 /* AnotherListView.swift */,
 				AA3EF1DD27AB0F3F00CE248E /* GeneratorCreationView.swift */,
 				AA3EF1E927B077C700CE248E /* AllGeneratorsView.swift */,
-				AA838DBB27B6849200659EF5 /* AnotherListView.swift */,
 				AA838DB627B5D2D200659EF5 /* RoomView.swift */,
 				AA838DBA27B682FE00659EF5 /* GeneratorsViews */,
 			);
@@ -123,6 +144,7 @@
 			children = (
 				AA3EF1D127AAC2B900CE248E /* Generator.swift */,
 				E7C0539F286F6B3000ED4709 /* NPC.swift */,
+				E7F19FA7287A0F7300703934 /* Credentials.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -136,6 +158,9 @@
 				AA3EF1D927AACCA100CE248E /* NavigationBar.swift */,
 				E7C053A5287054FA00ED4709 /* GrowingButton.swift */,
 				E7C053A72876159B00ED4709 /* Line.swift */,
+				E7C053A928772E2D00ED4709 /* LoadingView.swift */,
+				E7C053AB28772F2900ED4709 /* Dice.swift */,
+				E7F19FB0287A126800703934 /* EndEditBackground.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -174,10 +199,10 @@
 		AAFD07DB275BED60007C7C8B /* Scrollo */ = {
 			isa = PBXGroup;
 			children = (
+				E7F19FA9287A0FE400703934 /* Services */,
 				AAFD07DC275BED60007C7C8B /* ScrolloApp.swift */,
-				E7C053A1286F76C100ED4709 /* Constants.swift */,
 				AA3EF1E327AB280D00CE248E /* EventManager.swift */,
-				AA3EF1D827AACA2700CE248E /* Components */,
+				E7C053A1286F76C100ED4709 /* Constants.swift */,
 				AA3EF1D527AAC45700CE248E /* Models */,
 				AA3EF1D027AAC27600CE248E /* Views */,
 				AAFD07E0275BED61007C7C8B /* Assets.xcassets */,
@@ -192,6 +217,15 @@
 				AAFD07E3275BED61007C7C8B /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E7F19FA9287A0FE400703934 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				E7F19FAA287A101900703934 /* APIService.swift */,
+				E7F19FB7287A393D00703934 /* KeyChainStorage.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,6 +245,7 @@
 			);
 			name = Scrollo;
 			packageProductDependencies = (
+				E7F19FB5287A38AB00703934 /* SwiftKeychainWrapper */,
 			);
 			productName = Scrollo;
 			productReference = AAFD07D9275BED60007C7C8B /* Scrollo.app */;
@@ -285,6 +320,7 @@
 			);
 			mainGroup = AAFD07D0275BED60007C7C8B;
 			packageReferences = (
+				E7F19FB4287A38AB00703934 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */,
 			);
 			productRefGroup = AAFD07DA275BED60007C7C8B /* Products */;
 			projectDirPath = "";
@@ -330,14 +366,17 @@
 			files = (
 				AA3EF1EC27B07A9900CE248E /* GeneratorAddRow.swift in Sources */,
 				AA3EF1DA27AACCA100CE248E /* NavigationBar.swift in Sources */,
+				E7F19FA8287A0F7300703934 /* Credentials.swift in Sources */,
 				AA3EF1DE27AB0F3F00CE248E /* GeneratorCreationView.swift in Sources */,
 				AA838DB927B6809300659EF5 /* FlipCoinView.swift in Sources */,
+				E7F19FB8287A393D00703934 /* KeyChainStorage.swift in Sources */,
 				AA3EF1D227AAC2B900CE248E /* Generator.swift in Sources */,
 				E7C053A6287054FA00ED4709 /* GrowingButton.swift in Sources */,
 				AA3EF1E427AB280D00CE248E /* EventManager.swift in Sources */,
 				E7C053A0286F6B3000ED4709 /* NPC.swift in Sources */,
 				E7C0539C286F67A600ED4709 /* SearchNpcView.swift in Sources */,
 				E7C053A82876159B00ED4709 /* Line.swift in Sources */,
+				E7C053AC28772F2900ED4709 /* Dice.swift in Sources */,
 				E7C053A42870543300ED4709 /* TalkNpcView.swift in Sources */,
 				AA3EF1EA27B077C700CE248E /* AllGeneratorsView.swift in Sources */,
 				AAFD07DD275BED60007C7C8B /* ScrolloApp.swift in Sources */,
@@ -347,9 +386,14 @@
 				AA838DBC27B6849200659EF5 /* AnotherListView.swift in Sources */,
 				E7C053A2286F76C100ED4709 /* Constants.swift in Sources */,
 				AA838DC027B68A7800659EF5 /* CallNumberView.swift in Sources */,
+				E7F19FB3287A13E600703934 /* LoginViewModel.swift in Sources */,
+				E7F19FAF287A11E700703934 /* LoginView.swift in Sources */,
 				AA838DB727B5D2D200659EF5 /* RoomView.swift in Sources */,
+				E7F19FAB287A101900703934 /* APIService.swift in Sources */,
 				AA3EF1DC27AACDAE00CE248E /* TitleBar.swift in Sources */,
 				AA3EF1D727AAC8D700CE248E /* GeneratorRow.swift in Sources */,
+				E7C053AA28772E2D00ED4709 /* LoadingView.swift in Sources */,
+				E7F19FB1287A126800703934 /* EndEditBackground.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,11 +556,12 @@
 				DEVELOPMENT_TEAM = TCBYMLURJ2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "Allow Face ID to access stored credentials";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -541,11 +586,12 @@
 				DEVELOPMENT_TEAM = TCBYMLURJ2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "Allow Face ID to access stored credentials";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -691,6 +737,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E7F19FB4287A38AB00703934 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jrendel/SwiftKeychainWrapper";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E7F19FB5287A38AB00703934 /* SwiftKeychainWrapper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E7F19FB4287A38AB00703934 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */;
+			productName = SwiftKeychainWrapper;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AAFD07D1275BED60007C7C8B /* Project object */;
 }
