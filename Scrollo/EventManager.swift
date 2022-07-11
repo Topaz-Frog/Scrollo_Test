@@ -15,7 +15,7 @@ class EventManager: ObservableObject {
         Generator(name: "TALK TO NPC", image: "id", description: "Generate random NPC", content: "SearchNpc", isImplemented: true),
         Generator(name: "TIME TO SHOP", image: "shop", description: "Create any shop you like", content: "Not yet available", isImplemented: false),
         Generator(name: "FIND A TAVERN", image: "tavern", description: "Find all the hidden plots, dishes and spices", content: "Not yet available", isImplemented: false),
-        Generator(name: "IDENTIFY A SCROLL", image: "scroll", description: "Generate spellscroll or spellbook", content: "Not yet available", isImplemented: false),
+        Generator(name: "IDENTIFY A SCROLL", image: "scroll", description: "Generate spellscroll or spellbook", content: "Not yet available", isImplemented: true),
         Generator(name: "GET YOUT LOOT", image: "coin", description: "Generate loot according to your encounter", content: "Not yet available", isImplemented: false),
         Generator(name: "ROLL DICES", image: "dice", description: "Roll dices", content: "RollDices", isImplemented: true),
         Generator(name: "FLIP A COIN", image: "coin", description: "As it says", content: "FlipCoin", isImplemented: true),
@@ -29,7 +29,8 @@ class EventManager: ObservableObject {
         Generator(name: "TALK TO NPC", image: "id", description: "Generate random NPC", content: "SearchNpc", isImplemented: true),
         Generator(name: "CALL A NUMBER", image: "shop", description: "Generate random number", content: "CallNumber", isImplemented: true),
         Generator(name: "ROLL DICES", image: "dice", description: "Roll dices", content: "RollDices", isImplemented: true),
-        Generator(name: "FLIP A COIN", image: "coin", description: "As it says", content: "FlipCoin", isImplemented: true)
+        Generator(name: "FLIP A COIN", image: "coin", description: "As it says", content: "FlipCoin", isImplemented: true),
+        Generator(name: "IDENTIFY A SCROLL", image: "scroll", description: "Generate spellscroll or spellbook", content: "IdentifyScroll", isImplemented: true)
     ]
     
     enum BiometricType {

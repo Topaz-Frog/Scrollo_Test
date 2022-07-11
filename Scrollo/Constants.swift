@@ -93,7 +93,7 @@ struct Constants {
                                    ["index":11, "name":"Alter Self", "school":Magic_Schools[7]],
                                    ["index":12, "name":"Aid", "school":Magic_Schools[0]],
                                    ["index":13, "name":"Darkness", "school":Magic_Schools[4]],
-                                   ["index":14, "name":"Guidance", "school":Magic_Schools[2]]]//
+                                   ["index":14, "name":"Arcane Lock", "school":Magic_Schools[2]]]//
         static let All_spells_3 = [["index":15, "name":"Animate Dead", "school":Magic_Schools[6]],
                                    ["index":16, "name":"Bestow Curse", "school":Magic_Schools[6]],
                                    ["index":17, "name":"Blink", "school":Magic_Schools[7]],
@@ -124,5 +124,27 @@ struct Constants {
         
         static let All_spells_by_level = [[All_spells_0], [All_spells_1], [All_spells_2], [All_spells_3], [All_spells_4], [All_spells_5], [All_spells_6], [All_spells_7], [All_spells_8], [All_spells_9]]
         static let All_spells = All_spells_0 + All_spells_1 + All_spells_2 + All_spells_3 + All_spells_4 + All_spells_5 + All_spells_6 + All_spells_7 + All_spells_8 + All_spells_9
+        
+        static let All_spells_better = [
+            Spell(level: 0, name: "Acid Splash", school: MagicSchoolType.Conjuration, description: "", verbal: true, somatic: true, material: false),
+            Spell(level: 0, name: "Chill Touch", school: MagicSchoolType.Necromancy, description: "", verbal: true, somatic: true, material: false),
+            Spell(level: 0, name: "Create Bonfire", school: MagicSchoolType.Conjuration, description: "", verbal: true, somatic: true, material: false),
+            Spell(level: 0, name: "Dancing Lights", school: MagicSchoolType.Evocation, description: "", verbal: true, somatic: true, material: true),
+            Spell(level: 0, name: "Guidance", school: MagicSchoolType.Divination, description: "", verbal: true, somatic: true, material: false),
+            Spell(level: 1, name: "Absorb Element", school: MagicSchoolType.Abjuration, description: "", verbal: false, somatic: true, material: false),
+            Spell(level: 1, name: "Alarm", school: MagicSchoolType.Abjuration, description: "", verbal: true, somatic: true, material: true),
+            Spell(level: 1, name: "Charm Person", school: MagicSchoolType.Enchantment, description: "", verbal: true, somatic: true, material: false),
+            Spell(level: 1, name: "Catapult", school: MagicSchoolType.Transmutation, description: "", verbal: false, somatic: true, material: false),
+            Spell(level: 1, name: "Animal Friendship", school: MagicSchoolType.Enchantment, description: "", verbal: true, somatic: true, material: true),
+            Spell(level: 2, name: "Darkness", school: MagicSchoolType.Evocation, description: "", verbal: true, somatic: false, material: true),
+            Spell(level: 2, name: "Alter Self", school: MagicSchoolType.Transmutation, description: "", verbal: true, somatic: true, material: false),
+            Spell(level: 2, name: "Aid", school: MagicSchoolType.Abjuration, description: "", verbal: true, somatic: true, material: true),
+            Spell(level: 2, name: "Acid Arrow", school: MagicSchoolType.Evocation, description: "", verbal: true, somatic: true, material: true),
+            Spell(level: 2, name: "Arcane Lock", school: MagicSchoolType.Abjuration, description: "", verbal: true, somatic: true, material: true),
+            Spell(level: 3, name: "Animate Dead", school: MagicSchoolType.Necromancy, description: "", verbal: true, somatic: true, material: false),
+            Spell(level: 3, name: "Bestow Curse", school: MagicSchoolType.Necromancy, description: "", verbal: true, somatic: true, material: true),
+            Spell(level: 3, name: "Blink", school: MagicSchoolType.Necromancy, description: "", verbal: true, somatic: true, material: false),
+            Spell(level: 3, name: "Catnap", school: MagicSchoolType.Enchantment, description: "", verbal: false, somatic: true, material: true),
+            Spell(level: 3, name: "Clairvoyance", school: MagicSchoolType.Divination, description: "", verbal: true, somatic: true, material: true)]
     }
 }

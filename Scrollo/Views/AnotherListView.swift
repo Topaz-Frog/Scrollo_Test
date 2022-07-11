@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AnotherListView: View {
-    @EnvironmentObject var genManager: EventManager
+    @EnvironmentObject var eventManager: EventManager
     @Environment(\.dismiss) private var dismiss
     
     @State var selected: String? = nil
@@ -16,24 +16,25 @@ struct AnotherListView: View {
     
     var body: some View {
         VStack(spacing: 0) {
-            NavigationLink(destination: SearchNpcView(generator: $genManager.allGenerators[0]).environmentObject(genManager), tag: "SearchNpc", selection: $selected) { EmptyView() }
-            NavigationLink(destination: RollDicesView(generator: $genManager.allGenerators[5]).environmentObject(genManager), tag: "RollDices", selection: $selected) { EmptyView() }
-            NavigationLink(destination: FlipCoinView(generator: $genManager.allGenerators[6]).environmentObject(genManager), tag: "FlipCoin", selection: $selected) { EmptyView() }
-            NavigationLink(destination: CallNumberView(generator: $genManager.allGenerators[8]).environmentObject(genManager), tag: "CallNumber", selection: $selected) { EmptyView() }
+            NavigationLink(destination: SearchNpcView(generator: $eventManager.allGenerators[0]).environmentObject(eventManager), tag: "SearchNpc", selection: $selected) { EmptyView() }
+            NavigationLink(destination: IdentifyScrollView(generator: $eventManager.allGenerators[3]).environmentObject(eventManager), tag: "IdentifyScroll", selection: $selected) { EmptyView() }
+            NavigationLink(destination: RollDicesView(generator: $eventManager.allGenerators[5]).environmentObject(eventManager), tag: "RollDices", selection: $selected) { EmptyView() }
+            NavigationLink(destination: FlipCoinView(generator: $eventManager.allGenerators[6]).environmentObject(eventManager), tag: "FlipCoin", selection: $selected) { EmptyView() }
+            NavigationLink(destination: CallNumberView(generator: $eventManager.allGenerators[8]).environmentObject(eventManager), tag: "CallNumber", selection: $selected) { EmptyView() }
             List {
-                ForEach(genManager.generators.indices, id: \.self) { i in
-                    if genManager.generators[i].isImplemented {
+                ForEach(eventManager.generators.indices, id: \.self) { i in
+                    if eventManager.generators[i].isImplemented {
                         Button {
                             index = i
-                            selected = genManager.generators[i].content
+                            selected = eventManager.generators[i].content
                         } label: {
-                            GeneratorRow(generator: $genManager.generators[i])
+                            GeneratorRow(generator: $eventManager.generators[i])
                         }
                     } else {
-                        GeneratorRow(generator: $genManager.generators[i])
+                        GeneratorRow(generator: $eventManager.generators[i])
                             .swipeActions(edge: .trailing, allowsFullSwipe: false, content: {
                                 Button {
-                                    genManager.removeFromAdded(generator: genManager.generators[i])
+                                    eventManager.removeFromAdded(generator: eventManager.generators[i])
                                 } label: {
                                     Image(systemName: "trash.circle")
                                         .imageScale(.large)
@@ -43,12 +44,12 @@ struct AnotherListView: View {
                             })
                     }
                 }
-                .listRowBackground(Color.init(red: 51/255, green: 72/255, blue: 86/255))
+                .listRowBackground(Constants.Colors.DarkBlueBackground)
             }
             .listStyle(.plain)
             .navigationTitle("RandomStuff")
         }
-        .background(Color.init(red: 217/255, green: 125/255, blue: 84/255))
+        .background(Constants.Colors.OrangeBackground)
         .navigationBarBackButtonHidden(true)
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {

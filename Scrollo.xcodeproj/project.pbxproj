@@ -40,6 +40,9 @@
 		E7F19FB3287A13E600703934 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F19FB2287A13E600703934 /* LoginViewModel.swift */; };
 		E7F19FB6287A38AB00703934 /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = E7F19FB5287A38AB00703934 /* SwiftKeychainWrapper */; };
 		E7F19FB8287A393D00703934 /* KeyChainStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F19FB7287A393D00703934 /* KeyChainStorage.swift */; };
+		E7F19FBA287C680500703934 /* IdentifyScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F19FB9287C680500703934 /* IdentifyScrollView.swift */; };
+		E7F19FBC287C69C000703934 /* SpellRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F19FBB287C69C000703934 /* SpellRow.swift */; };
+		E7F19FBF287C743200703934 /* Spell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F19FBE287C743200703934 /* Spell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +98,10 @@
 		E7F19FB0287A126800703934 /* EndEditBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndEditBackground.swift; sourceTree = "<group>"; };
 		E7F19FB2287A13E600703934 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		E7F19FB7287A393D00703934 /* KeyChainStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainStorage.swift; sourceTree = "<group>"; };
+		E7F19FB9287C680500703934 /* IdentifyScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifyScrollView.swift; sourceTree = "<group>"; };
+		E7F19FBB287C69C000703934 /* SpellRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellRow.swift; sourceTree = "<group>"; };
+		E7F19FBD287C70D800703934 /* ToDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDo.swift; sourceTree = "<group>"; };
+		E7F19FBE287C743200703934 /* Spell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +152,7 @@
 				AA3EF1D127AAC2B900CE248E /* Generator.swift */,
 				E7C0539F286F6B3000ED4709 /* NPC.swift */,
 				E7F19FA7287A0F7300703934 /* Credentials.swift */,
+				E7F19FBE287C743200703934 /* Spell.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -154,6 +162,7 @@
 			children = (
 				AA3EF1D627AAC8D700CE248E /* GeneratorRow.swift */,
 				AA3EF1EB27B07A9900CE248E /* GeneratorAddRow.swift */,
+				E7F19FBB287C69C000703934 /* SpellRow.swift */,
 				AA3EF1DB27AACDAE00CE248E /* TitleBar.swift */,
 				AA3EF1D927AACCA100CE248E /* NavigationBar.swift */,
 				E7C053A5287054FA00ED4709 /* GrowingButton.swift */,
@@ -174,6 +183,7 @@
 				AA838DBF27B68A7800659EF5 /* CallNumberView.swift */,
 				E7C0539B286F67A600ED4709 /* SearchNpcView.swift */,
 				E7C053A32870543300ED4709 /* TalkNpcView.swift */,
+				E7F19FB9287C680500703934 /* IdentifyScrollView.swift */,
 			);
 			path = GeneratorsViews;
 			sourceTree = "<group>";
@@ -207,6 +217,7 @@
 				AA3EF1D027AAC27600CE248E /* Views */,
 				AAFD07E0275BED61007C7C8B /* Assets.xcassets */,
 				AAFD07E2275BED61007C7C8B /* Preview Content */,
+				E7F19FBD287C70D800703934 /* ToDo.swift */,
 			);
 			path = Scrollo;
 			sourceTree = "<group>";
@@ -365,6 +376,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA3EF1EC27B07A9900CE248E /* GeneratorAddRow.swift in Sources */,
+				E7F19FBC287C69C000703934 /* SpellRow.swift in Sources */,
 				AA3EF1DA27AACCA100CE248E /* NavigationBar.swift in Sources */,
 				E7F19FA8287A0F7300703934 /* Credentials.swift in Sources */,
 				AA3EF1DE27AB0F3F00CE248E /* GeneratorCreationView.swift in Sources */,
@@ -389,6 +401,8 @@
 				E7F19FB3287A13E600703934 /* LoginViewModel.swift in Sources */,
 				E7F19FAF287A11E700703934 /* LoginView.swift in Sources */,
 				AA838DB727B5D2D200659EF5 /* RoomView.swift in Sources */,
+				E7F19FBF287C743200703934 /* Spell.swift in Sources */,
+				E7F19FBA287C680500703934 /* IdentifyScrollView.swift in Sources */,
 				E7F19FAB287A101900703934 /* APIService.swift in Sources */,
 				AA3EF1DC27AACDAE00CE248E /* TitleBar.swift in Sources */,
 				AA3EF1D727AAC8D700CE248E /* GeneratorRow.swift in Sources */,
